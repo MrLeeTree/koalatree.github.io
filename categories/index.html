@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="LeetCode,Array," />
+  <meta name="keywords" content="Hexo, NexT, koalatree, Mr.Tree, Blog, Node.js, Git, Python, JAVA, ML, DL, Tensorflow, Hadoop, Spark" />
 
 
 
@@ -84,18 +84,17 @@
 
 
 
-<meta name="description" content="QuestionRotate an array of n elements to the right by k steps. For example, with n = 7 and k = 3, the array [1,2,3,4,5,6,7] is rotated to [5,6,7,1,2,3,4]. Note:Try to come up as many solutions as you">
-<meta name="keywords" content="LeetCode,Array">
-<meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode-189：Rotate Array">
-<meta property="og:url" content="https://koalatree.github.io/2017/04/18/LeetCode-189_Rotate_Array/index.html">
+<meta name="description" content="s">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="https://koalatree.github.io/categories/index.html">
 <meta property="og:site_name" content="大树先生的博客">
-<meta property="og:description" content="QuestionRotate an array of n elements to the right by k steps. For example, with n = 7 and k = 3, the array [1,2,3,4,5,6,7] is rotated to [5,6,7,1,2,3,4]. Note:Try to come up as many solutions as you">
+<meta property="og:description" content="s">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-04-18T15:21:27.370Z">
+<meta property="og:updated_time" content="2017-07-30T10:37:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode-189：Rotate Array">
-<meta name="twitter:description" content="QuestionRotate an array of n elements to the right by k steps. For example, with n = 7 and k = 3, the array [1,2,3,4,5,6,7] is rotated to [5,6,7,1,2,3,4]. Note:Try to come up as many solutions as you">
+<meta name="twitter:title" content="categories">
+<meta name="twitter:description" content="s">
 
 
 
@@ -116,9 +115,15 @@
 
 
 
-  <link rel="canonical" href="https://koalatree.github.io/2017/04/18/LeetCode-189_Rotate_Array/"/>
+  <link rel="canonical" href="https://koalatree.github.io/categories/"/>
 
-  <title> LeetCode-189：Rotate Array | 大树先生的博客 </title>
+  <title>
+  
+
+  
+    分类 | 大树先生的博客
+  
+</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -139,7 +144,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -480,205 +485,21 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
     
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                LeetCode-189：Rotate Array
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-04-18T22:05:00+08:00" content="2017-04-18">
-              2017-04-18
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-              &nbsp; | &nbsp;
-              <span class="page-pv">热度
-              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>℃
-              </span>
+      <div class="category-all-page">
+        <div class="category-all-title">
+            暂无分类
+        </div>
+        <div class="category-all">
           
         </div>
-      </header>
+        <blockquote class="blockquote-center">
+          人生最难的就是在热爱和生计之间做选择<br>
+          愿每个人这一生<br>
+          既对得起梦想又担得起生活的责任
+        </blockquote>
+      </div>
     
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Rotate an array of n elements to the right by k steps.</p>
-<p>For example, with n = 7 and k = 3, the array [1,2,3,4,5,6,7] is rotated to [5,6,7,1,2,3,4].</p>
-<p>Note:<br>Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.</p>
-<a id="more"></a>
-<h3 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h3><p>将一个含有n个元素的数组，旋转k步，即将右边的k个元素，从数组尾部依次移动到数组的头部。</p>
-<ol>
-<li><code>idea1</code>:利用分步的思想，定义一个反转数组的函数，进行三次反转，进而得到目标数组.<ul>
-<li>首先进行原数组的整体反转；</li>
-<li>将反转后的数组的当前k个元素进行反转；</li>
-<li>再将后n-k个元素进行反转.</li>
-</ul>
-</li>
-</ol>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><ol>
-<li><p>idea1—<code>Java</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public void rotate(int[] nums, int k) &#123;</div><div class="line">        int n = nums.length;</div><div class="line">        k = k%n;</div><div class="line">        reverse(nums, 0, n-1);</div><div class="line">        reverse(nums, 0, k-1);</div><div class="line">        reverse(nums, k, n-1);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public void reverse(int[] nums, int start, int end)&#123;</div><div class="line">        <span class="keyword">while</span>(start &lt; end)&#123;</div><div class="line">            int temp = nums[start];</div><div class="line">            nums[start] = nums[end];</div><div class="line">            nums[end] = temp;</div><div class="line">            start++;</div><div class="line">            end--;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>注意这里反转函数reverse()对数组操作，每次使用首尾一一对应的元素进行反转；</li>
-<li>旋转数组注意k&gt;n的情况，一旦k=n，则相当于对数组不进行操作，故这里的k=k%n，取余数.</li>
-<li>Runtime：1ms.</li>
-</ul>
-</li>
-<li><p>idea2 and idea3 有待提出.</p>
-</li>
-</ol>
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-<blockquote class="blockquote-center">
-    完
-</blockquote>
-
-  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://github.com/Neveryu" target="_blank">Neveryu</a><br/>有问题请 <a class="link-blue" href="https://neveryu.github.io/guestbook" target="_blank">留言</a> 或者私信我的 <a class="link-blue" href="http://weibo.com/Neveryu" target="_blank">微博</a>。
-
-  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>谢谢你请我吃糖</div>
-    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-      <span>赏</span>
-    </button>
-    <div id="QR" style="display: none;">
-      
-        <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/assets/img/wechat.png" alt="Mr.Tree WeChat Pay"/>
-          <p>微信打赏</p>
-        </div>
-      
-      
-        <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/assets/img/alipay.png" alt="Mr.Tree Alipay"/>
-          <p>支付宝打赏</p>
-        </div>
-      
-    </div>
-  </div>
-
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/LeetCode/" rel="tag">#LeetCode</a>
-          
-            <a href="/tags/Array/" rel="tag">#Array</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/04/13/LeetCode-219_Contains_Duplicate_II/" rel="next" title="LeetCode-219：Contains Duplicate II">
-                <i class="fa fa-chevron-left"></i> LeetCode-219：Contains Duplicate II
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/18/LeetCode-169_Majority_Element/" rel="prev" title="LeetCode-169：Majority Element">
-                LeetCode-169：Majority Element <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-  <a class="jiathis_button_tsina"></a>
-  <a class="jiathis_button_tqq"></a>
-  <a class="jiathis_button_weixin"></a>
-  <a class="jiathis_button_cqq"></a>
-  <a class="jiathis_button_douban"></a>
-  <a class="jiathis_button_renren"></a>
-  <a class="jiathis_button_qzone"></a>
-  <a class="jiathis_button_kaixin001"></a>
-  <a class="jiathis_button_copy"></a>
-  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-  <a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" >
-  var jiathis_config={
-    hideMore:false
-  }
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-<!-- JiaThis Button END -->
-
-      
-    </div>
   </div>
 
 
@@ -687,10 +508,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -710,17 +527,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel ">
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/avatar/avatar.jpg"
@@ -796,17 +604,6 @@
         
       </section>
 
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.</span> <span class="nav-text">Question</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Idea"><span class="nav-number">1.1.</span> <span class="nav-text">Idea</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code"><span class="nav-number">1.2.</span> <span class="nav-text">Code</span></a></li></ol></li></ol></div>
-            
-          </div>
-        </section>
       
       <!-- hack一个虚线出来 -->
       <section style="border-top:1px dotted #ccc;height:10px;"></section>
@@ -929,10 +726,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
-
-
 
   
 
