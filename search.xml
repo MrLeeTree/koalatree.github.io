@@ -97,9 +97,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[LeetCode-118：Pascal's Triangle]]></title>
-    <url>%2F2017%2F04%2F11%2FLeetCode-118_Pascal's_Triangle%2F</url>
-    <content type="text"><![CDATA[QuestionGiven numRows, generate the first numRows of Pascal’s triangle. For example, given numRows = 5,Return[ [1], [1,1], [1,2,1], [1,3,3,1], [1,4,6,4,1]] Idea给定行数，生成制定行数的Pascal’s triangle(又称，杨辉三角)。 直接使用Pascal三角的生成方式进行解题. Java： 使用ArrayList]]></content>
+    <title><![CDATA[LeetCode-119：Pascal's Triangle II]]></title>
+    <url>%2F2017%2F04%2F11%2FLeetCode-119_Pascal's_Triangle_II%2F</url>
+    <content type="text"><![CDATA[QuestionGiven an index k, return the kth row of the Pascal’s triangle. For example, given k = 3,Return [1,3,3,1]. Note:optimize your algorithm to use only O(k) extra space. Idea给定一个系数k，返回Pascal三角的第k行，将优化算法，使得算法的空间复杂度为O(k). 同LeetCode-118，直接使用Pascal三角的生成方式进行解题. 该题较118更为简单，无需要对Pascal三角的结构进行存储，仅需依次生成行至所需的行数即可； 使用ArrayList存储行. Code ArrayList—Java 123456789101112public class Solution &#123; public List&lt;Integer&gt; getRow(int rowIndex) &#123; ArrayList&lt;Integer&gt; row = new ArrayList&lt;Integer&gt;(); for (int i=0; i&lt;rowIndex+1; i++)&#123; row.add(0,1); for(int j=1; j&lt;row.size()-1;j++)&#123; row.set(j, row.get(j)+row.get(j+1)); &#125; &#125; return row; &#125;&#125; 虽然该题较118更为简单，但是依然需要注意，需要返回的是第k行，这里第0行为[1].]]></content>
       <categories>
         <category>LeetCode</category>
       </categories>
@@ -109,9 +109,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[LeetCode-119：Pascal's Triangle II]]></title>
-    <url>%2F2017%2F04%2F11%2FLeetCode-119_Pascal's_Triangle_II%2F</url>
-    <content type="text"><![CDATA[QuestionGiven an index k, return the kth row of the Pascal’s triangle. For example, given k = 3,Return [1,3,3,1]. Note:optimize your algorithm to use only O(k) extra space. Idea给定一个系数k，返回Pascal三角的第k行，将优化算法，使得算法的空间复杂度为O(k). 同LeetCode-118，直接使用Pascal三角的生成方式进行解题. 该题较118更为简单，无需要对Pascal三角的结构进行存储，仅需依次生成行至所需的行数即可； 使用ArrayList存储行. Code ArrayList—Java 123456789101112public class Solution &#123; public List&lt;Integer&gt; getRow(int rowIndex) &#123; ArrayList&lt;Integer&gt; row = new ArrayList&lt;Integer&gt;(); for (int i=0; i&lt;rowIndex+1; i++)&#123; row.add(0,1); for(int j=1; j&lt;row.size()-1;j++)&#123; row.set(j, row.get(j)+row.get(j+1)); &#125; &#125; return row; &#125;&#125; 虽然该题较118更为简单，但是依然需要注意，需要返回的是第k行，这里第0行为[1].]]></content>
+    <title><![CDATA[LeetCode-118：Pascal's Triangle]]></title>
+    <url>%2F2017%2F04%2F11%2FLeetCode-118_Pascal's_Triangle%2F</url>
+    <content type="text"><![CDATA[QuestionGiven numRows, generate the first numRows of Pascal’s triangle. For example, given numRows = 5,Return[ [1], [1,1], [1,2,1], [1,3,3,1], [1,4,6,4,1]] Idea给定行数，生成制定行数的Pascal’s triangle(又称，杨辉三角)。 直接使用Pascal三角的生成方式进行解题. Java： 使用ArrayList]]></content>
       <categories>
         <category>LeetCode</category>
       </categories>
