@@ -234,7 +234,7 @@
       
         <li class="menu-item menu-item-search">
           
-            <a href="javascript:;" class="st-search-show-outputs">
+            <a href="javascript:;" class="popup-trigger">
           
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
@@ -249,19 +249,12 @@
   
     <div class="site-search">
       
-  <form class="site-search-form">
-  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
-</form>
-
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-  _st('install', 'true','2.0.0');
-</script>
-
+  <div class="popup">
+ <span class="search-icon fa fa-search fa-lg"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
 
 
     </div>
@@ -441,16 +434,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/11/LeetCode-35_Search_Insert_Position/" rel="next" title="LeetCode-35：Search Insert Position">
-                <i class="fa fa-chevron-left"></i> LeetCode-35：Search Insert Position
+              <a href="/2017/04/11/LeetCode-118_Pascal's_Triangle/" rel="next" title="LeetCode-118：Pascal's Triangle">
+                <i class="fa fa-chevron-left"></i> LeetCode-118：Pascal's Triangle
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/11/LeetCode-118_Pascal's_Triangle/" rel="prev" title="LeetCode-118：Pascal's Triangle">
-                LeetCode-118：Pascal's Triangle <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/12/LeetCode-268_Missing_Number/" rel="prev" title="LeetCode-268：Missing Number">
+                LeetCode-268：Missing Number <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
