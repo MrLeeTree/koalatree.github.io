@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://koalatree.github.io/2017/08/10/Python_for_data_analysis(1)/</loc>
+    <loc>https://koalatree.github.io/weblog/index.html</loc>
     
-    <lastmod>2017-08-21T11:02:34.391Z</lastmod>
+    <lastmod>2017-08-21T11:10:59.480Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://koalatree.github.io/weblog/index.html</loc>
+    <loc>https://koalatree.github.io/2017/08/10/Python_for_data_analysis(1)/</loc>
     
-    <lastmod>2017-08-18T11:14:47.023Z</lastmod>
+    <lastmod>2017-08-21T11:02:34.391Z</lastmod>
     
   </url>
   
@@ -156,14 +156,14 @@
   </url>
   
   <url>
-    <loc>https://koalatree.github.io/tags/index.html</loc>
+    <loc>https://koalatree.github.io/categories/index.html</loc>
     
     <lastmod>2017-07-30T10:37:55.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://koalatree.github.io/categories/index.html</loc>
+    <loc>https://koalatree.github.io/tags/index.html</loc>
     
     <lastmod>2017-07-30T10:37:55.000Z</lastmod>
     
