@@ -2,9 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://koalatree.github.io/2017/03/06/Abstract_git_notes-3/</loc>
+    
+    <lastmod>2017-08-25T17:03:14.279Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://koalatree.github.io/2017/03/01/Abstract_git_notes-2/</loc>
+    
+    <lastmod>2017-08-25T17:00:43.621Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://koalatree.github.io/2017/02/23/Abstract_git_notes-1/</loc>
+    
+    <lastmod>2017-08-25T16:52:54.714Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://koalatree.github.io/2017/02/21/TensorFlow_for_win10_system/</loc>
+    
+    <lastmod>2017-08-25T16:45:22.251Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://koalatree.github.io/2017/08/10/Python-for-data-analysis-1/</loc>
     
-    <lastmod>2017-08-25T16:26:08.478Z</lastmod>
+    <lastmod>2017-08-25T16:41:04.166Z</lastmod>
     
   </url>
   
@@ -26,13 +54,6 @@
     <loc>https://koalatree.github.io/2017/02/20/hello-world/</loc>
     
     <lastmod>2017-08-18T11:13:52.152Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://koalatree.github.io/2017/02/21/TensorFlow_for_win10_system/</loc>
-    
-    <lastmod>2017-08-16T06:12:37.985Z</lastmod>
     
   </url>
   
@@ -110,27 +131,6 @@
     <loc>https://koalatree.github.io/2017/04/13/LeetCode-26_Remove_Duplicates_from_Sorted_Array/</loc>
     
     <lastmod>2017-08-16T06:09:43.020Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://koalatree.github.io/2017/03/06/Abstract_git_notes(3)/</loc>
-    
-    <lastmod>2017-08-16T06:08:35.116Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://koalatree.github.io/2017/03/01/Abstract_git_notes(2)/</loc>
-    
-    <lastmod>2017-08-16T06:08:08.333Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://koalatree.github.io/2017/02/23/Abstract_git_notes(1)/</loc>
-    
-    <lastmod>2017-08-16T05:56:38.640Z</lastmod>
     
   </url>
   

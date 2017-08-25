@@ -92,14 +92,14 @@
 <meta property="og:site_name" content="大树先生的博客">
 <meta property="og:description" content="11月29日，Google Brain工程师团队宣布在 TensorFlow 0.12 中加入初步的Windows支持。 在谷歌的支持下，TensorFlow 已成为 GitHub 上最受欢迎的机器学习开源项目。同时，谷歌也在 TensorFlow 框架中进行过各类研究、开源了其中一些项目，这些研究涉及到自然语言处理、机器翻译、图像描述、图像分类等等。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/bb4f51fbly1fcy63mvijpj20dw08c0v6">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/bb4f51fbly1fcy3aeijc3j205303k0sj">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/bb4f51fbly1fcy37ntxe4j20ay05dwed">
-<meta property="og:updated_time" content="2017-08-16T06:12:37.985Z">
+<meta property="og:image" content="https://koalatree.github.io/2017/02/21/TensorFlow_for_win10_system/TensorFlow_for_win10_system-1.jpg">
+<meta property="og:image" content="https://koalatree.github.io/2017/02/21/TensorFlow_for_win10_system/TensorFlow_for_win10_system-2.jpg">
+<meta property="og:image" content="https://koalatree.github.io/2017/02/21/TensorFlow_for_win10_system/TensorFlow_for_win10_system-3.jpg">
+<meta property="og:updated_time" content="2017-08-25T16:45:22.251Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="windows10系统安装TensorFlow">
 <meta name="twitter:description" content="11月29日，Google Brain工程师团队宣布在 TensorFlow 0.12 中加入初步的Windows支持。 在谷歌的支持下，TensorFlow 已成为 GitHub 上最受欢迎的机器学习开源项目。同时，谷歌也在 TensorFlow 框架中进行过各类研究、开源了其中一些项目，这些研究涉及到自然语言处理、机器翻译、图像描述、图像分类等等。">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/bb4f51fbly1fcy63mvijpj20dw08c0v6">
+<meta name="twitter:image" content="https://koalatree.github.io/2017/02/21/TensorFlow_for_win10_system/TensorFlow_for_win10_system-1.jpg">
 
 
 
@@ -357,7 +357,7 @@
       
 
       
-        <p><img src="https://ws1.sinaimg.cn/large/bb4f51fbly1fcy63mvijpj20dw08c0v6" alt="人工智能"></p>
+        <p><img src="/2017/02/21/TensorFlow_for_win10_system/TensorFlow_for_win10_system-1.jpg" alt="人工智能"></p>
 <p>11月29日，Google Brain工程师团队宣布在 TensorFlow 0.12 中加入初步的Windows支持。</p>
 <p>在谷歌的支持下，TensorFlow 已成为 GitHub 上最受欢迎的机器学习开源项目。同时，谷歌也在 TensorFlow 框架中进行过各类研究、开源了其中一些项目，这些研究涉及到自然语言处理、机器翻译、图像描述、图像分类等等。<br><a id="more"></a><br>随着 TensorFlow r0.12 版的发布，这一开源软件库现已支持 Windows7、10 和 Server 2016。同时，这一新版本可以让用户在 TensorFlow 训练中得到 CUDA 8 的 GPU 加速。我们已将新版本在 PyPI 中封装成型。现在你可以使用命令‘pip install tensorflow’来安装 TensorFlow 了。</p>
 <h2 id="一、安装python和python-pip"><a href="#一、安装python和python-pip" class="headerlink" title="一、安装python和python-pip"></a>一、安装python和python-pip</h2><h3 id="1-下载安装python"><a href="#1-下载安装python" class="headerlink" title="1. 下载安装python"></a><strong>1. 下载安装python</strong></h3><ol>
@@ -378,10 +378,10 @@
 </ol>
 <h2 id="二、安装TensorFlow"><a href="#二、安装TensorFlow" class="headerlink" title="二、安装TensorFlow"></a>二、安装TensorFlow</h2><p>如果上面python和python-pip安装没有问题，只需要执行一个指令就可以顺利安装TensorFlow。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">C:&gt; pip install tensorflow</div></pre></td></tr></table></figure>
-<p>Tensorflow所需要的依赖会自动安装：<br><img src="http://ww1.sinaimg.cn/large/bb4f51fbly1fcy3aeijc3j205303k0sj" alt="依赖"></p>
+<p>Tensorflow所需要的依赖会自动安装：<br><img src="/2017/02/21/TensorFlow_for_win10_system/TensorFlow_for_win10_system-2.jpg" alt="依赖"></p>
 <h2 id="三、你的第一个测试TensorFlow程序"><a href="#三、你的第一个测试TensorFlow程序" class="headerlink" title="三、你的第一个测试TensorFlow程序"></a>三、你的第一个测试TensorFlow程序</h2><h3 id="1-测试代码"><a href="#1-测试代码" class="headerlink" title="1. 测试代码"></a><strong>1. 测试代码</strong></h3><p><code>输出hello</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ python</div><div class="line">import tensorflow as tf</div><div class="line">hello = tf.constant(<span class="string">'Hello, TensorFlow!'</span>);</div><div class="line">sess = tf.Session();</div><div class="line">sess.run(hello);</div><div class="line">Hello, TensorFlow!</div></pre></td></tr></table></figure></p>
 <p><code>10+32=？</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = tf.constant(10)</div><div class="line">b = tf.constant(32)</div><div class="line">sess.run(a+b)</div></pre></td></tr></table></figure></p>
-<h3 id="2-输出成功结果"><a href="#2-输出成功结果" class="headerlink" title="2. 输出成功结果"></a><strong>2. 输出成功结果</strong></h3><p><img src="http://ww1.sinaimg.cn/large/bb4f51fbly1fcy37ntxe4j20ay05dwed" alt="结果"></p>
+<h3 id="2-输出成功结果"><a href="#2-输出成功结果" class="headerlink" title="2. 输出成功结果"></a><strong>2. 输出成功结果</strong></h3><p><img src="/2017/02/21/TensorFlow_for_win10_system/TensorFlow_for_win10_system-3.jpg" alt="结果"></p>
 <p>至此TensorFlow已经安装完毕，请尽情使用它吧！</p>
 
       
@@ -450,7 +450,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/02/23/Abstract_git_notes(1)/" rel="prev" title="简洁git笔记(一)">
+              <a href="/2017/02/23/Abstract_git_notes-1/" rel="prev" title="简洁git笔记(一)">
                 简洁git笔记(一) <i class="fa fa-chevron-right"></i>
               </a>
             
