@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT, koalatree, Mr.Tree, Blog, Node.js, Git, Python, JAVA, ML, DL, Tensorflow, Hadoop, Spark" />
+  <meta name="keywords" content="LeetCode,Array," />
 
 
 
@@ -84,16 +84,18 @@
 
 
 
-<meta name="description" content="生活是一颗长满可能的树">
-<meta property="og:type" content="website">
-<meta property="og:title" content="大树先生的博客">
-<meta property="og:url" content="https://koalatree.github.io/tags/git仓库/index.html">
+<meta name="description" content="QuestionGiven two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. Note:You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold ad">
+<meta name="keywords" content="LeetCode,Array">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode-88：Merge Sorted Array (合并两排序数组)">
+<meta property="og:url" content="https://koalatree.github.io/2017/10/18/LeetCode-88：Merge Sorted Array/index.html">
 <meta property="og:site_name" content="大树先生的博客">
-<meta property="og:description" content="生活是一颗长满可能的树">
+<meta property="og:description" content="QuestionGiven two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. Note:You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold ad">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-18T15:23:59.709Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="大树先生的博客">
-<meta name="twitter:description" content="生活是一颗长满可能的树">
+<meta name="twitter:title" content="LeetCode-88：Merge Sorted Array (合并两排序数组)">
+<meta name="twitter:description" content="QuestionGiven two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. Note:You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold ad">
 
 
 
@@ -114,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="https://koalatree.github.io/tags/git仓库/"/>
+  <link rel="canonical" href="https://koalatree.github.io/2017/10/18/LeetCode-88：Merge Sorted Array/"/>
 
-  <title> 标签: git仓库 | 大树先生的博客 </title>
+  <title> LeetCode-88：Merge Sorted Array (合并两排序数组) | 大树先生的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -137,7 +139,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -268,46 +270,216 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        git仓库
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                LeetCode-88：Merge Sorted Array (合并两排序数组)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-10-18T10:20:00+08:00" content="2017-10-18">
+              2017-10-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">热度
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>℃
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.</p>
+<p><strong>Note:</strong><br>You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold additional elements from nums2. The number of elements initialized in nums1 and nums2 are m and n respectively.</p>
+<p><strong>问题解析：</strong></p>
+<p>合并两个排序好的数组，重新合并成一个排序好的数组。</p>
+<a id="more"></a>
+<h2 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h2><h4 id="Solution-1："><a href="#Solution-1：" class="headerlink" title="Solution 1："></a><strong>Solution 1：</strong></h4><p>合并实现。</p>
+<ul>
+<li>注意题目中给定的条件，<code>nums1</code>数组要大于<code>nums2</code>的数组，将<code>nums2</code>的元素放到<code>nums1</code>中；</li>
+<li>绘图可知，<code>nums1</code>后部空缺，故从后向前依次比较，结果存入<code>nums1</code>的后部。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span> m, <span class="keyword">int</span>[] nums2, <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> i = m -<span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> j = n -<span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> k = m + n -<span class="number">1</span>;</div><div class="line">        <span class="keyword">while</span> ( i &gt;= <span class="number">0</span> &amp;&amp; j &gt;= <span class="number">0</span>)&#123;</div><div class="line">            <span class="keyword">if</span> (nums1[i] &gt; nums2[j])&#123;</div><div class="line">                nums1[k--] = nums1[i--];</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                nums1[k--] = nums2[j--];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">while</span> ( j &gt;= <span class="number">0</span>)&#123;</div><div class="line">            nums1[k--] = nums2[j--];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>Runtime: 0 ms</li>
+<li>Beats 30.75 % % of java submissions</li>
+<li>时间复杂度：O(n)；空间复杂度：O(1)</li>
+</ul>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/02/23/Abstract_git_notes-1/" itemprop="url">
-              
-                <span itemprop="name">简洁git笔记(一)</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-02-23T16:44:00+08:00"
-              content="2017-02-23" >
-          02-23
-        </time>
-      </div>
+<blockquote class="blockquote-center">
+    The End
+</blockquote>
 
-    </header>
+  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://koalatree.github.io/" target="_blank">Mr.Tree</a><br/>有问题请 <a class="link-blue" href="mailto:koala_tree@outlook.com" target="_blank">邮件</a> 联系或者私信我的 <a class="link-blue" href="http://weibo.com/koalatree7" target="_blank">微博</a>。
+
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>谢谢你请我吃糖</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/reward/wechat.jpg" alt="Mr.Tree WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/reward/alipay.jpg" alt="Mr.Tree Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i>LeetCode</a>
+          
+            <a href="/tags/Array/" rel="tag"><i class="fa fa-tag"></i>Array</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/17/LeetCode-532：K-diff Pairs in an Array/" rel="next" title="LeetCode-532：K-diff Pairs in an Array (给定绝对值差的值对个数)">
+                <i class="fa fa-chevron-left"></i> LeetCode-532：K-diff Pairs in an Array (给定绝对值差的值对个数)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/18/LeetCode-628：Maximum Product of Three Numbers/" rel="prev" title="LeetCode-628：Maximum Product of Three Numbers (数组三元素最大乘积)">
+                LeetCode-628：Maximum Product of Three Numbers (数组三元素最大乘积) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -334,8 +506,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/avatar/avatar.jpg"
@@ -442,6 +623,17 @@
         
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Answer"><span class="nav-number">2.</span> <span class="nav-text">Answer</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Solution-1："><span class="nav-number">2.0.1.</span> <span class="nav-text">Solution 1：</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
       <!-- hack一个虚线出来 -->
       <section style="border-top:1px dotted #ccc;height:10px;"></section>
@@ -552,6 +744,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

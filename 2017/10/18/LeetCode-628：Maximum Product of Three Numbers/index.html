@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT, koalatree, Mr.Tree, Blog, Node.js, Git, Python, JAVA, ML, DL, Tensorflow, Hadoop, Spark" />
+  <meta name="keywords" content="LeetCode,Array," />
 
 
 
@@ -84,16 +84,18 @@
 
 
 
-<meta name="description" content="生活是一颗长满可能的树">
-<meta property="og:type" content="website">
-<meta property="og:title" content="大树先生的博客">
-<meta property="og:url" content="https://koalatree.github.io/tags/git仓库/index.html">
+<meta name="description" content="QuestionGiven an integer array, find three numbers whose product is maximum and output the maximum product. Example 1: Input: [1,2,3] Output: 6">
+<meta name="keywords" content="LeetCode,Array">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode-628：Maximum Product of Three Numbers (数组三元素最大乘积)">
+<meta property="og:url" content="https://koalatree.github.io/2017/10/18/LeetCode-628：Maximum Product of Three Numbers/index.html">
 <meta property="og:site_name" content="大树先生的博客">
-<meta property="og:description" content="生活是一颗长满可能的树">
+<meta property="og:description" content="QuestionGiven an integer array, find three numbers whose product is maximum and output the maximum product. Example 1: Input: [1,2,3] Output: 6">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-18T15:25:33.907Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="大树先生的博客">
-<meta name="twitter:description" content="生活是一颗长满可能的树">
+<meta name="twitter:title" content="LeetCode-628：Maximum Product of Three Numbers (数组三元素最大乘积)">
+<meta name="twitter:description" content="QuestionGiven an integer array, find three numbers whose product is maximum and output the maximum product. Example 1: Input: [1,2,3] Output: 6">
 
 
 
@@ -114,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="https://koalatree.github.io/tags/git仓库/"/>
+  <link rel="canonical" href="https://koalatree.github.io/2017/10/18/LeetCode-628：Maximum Product of Three Numbers/"/>
 
-  <title> 标签: git仓库 | 大树先生的博客 </title>
+  <title> LeetCode-628：Maximum Product of Three Numbers (数组三元素最大乘积) | 大树先生的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -137,7 +139,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -268,46 +270,234 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        git仓库
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                LeetCode-628：Maximum Product of Three Numbers (数组三元素最大乘积)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-10-18T22:30:00+08:00" content="2017-10-18">
+              2017-10-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">热度
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>℃
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given an integer array, find three numbers whose product is maximum and output the maximum product.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: [1,2,3]
+Output: 6
+</code></pre><a id="more"></a>
+<p><strong>Example 2:</strong></p>
+<pre><code>Input: [1,2,3,4]
+Output: 24
+</code></pre><p><strong>Note:</strong></p>
+<ol>
+<li>The length of the given array will be in range [3,104] and all elements are in the range [-1000, 1000].</li>
+<li>Multiplication of any three numbers in the input won’t exceed the range of 32-bit signed integer.</li>
+</ol>
+<p><strong>问题解析：</strong></p>
+<p>从数组中找到任意三个元素乘积的最大值，数组元素范围在[-1000,1000]内。</p>
+<h2 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h2><h4 id="Solution-1："><a href="#Solution-1：" class="headerlink" title="Solution 1："></a><strong>Solution 1：</strong></h4><p>查找实现即可。</p>
+<ul>
+<li>注意题目中给定的条件，数组中的元素范围为[-1000,1000]，所以元素存在负数，不要忽略负负得正的情况；</li>
+<li>通过分析可以知道，只要将数组排序以后，我们需要讨论的元素就只存在数组的首和尾；</li>
+<li>三元素最大值的乘积只有两种情况：一种是末尾第一个元素和末尾倒数二三个元素相乘；一种是末尾第一个元素和首部第一二个元素相乘。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maximumProduct</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">        Arrays.sort(nums);</div><div class="line">        <span class="keyword">int</span> m = nums.length-<span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> negtive = nums[<span class="number">0</span>] * nums[<span class="number">1</span>];</div><div class="line">        <span class="keyword">int</span> positive = nums[m-<span class="number">1</span>] * nums[m-<span class="number">2</span>];</div><div class="line">        <span class="keyword">int</span> result = <span class="number">0</span>;</div><div class="line">        </div><div class="line">        <span class="keyword">if</span> (negtive &lt; positive)&#123;</div><div class="line">            result = positive * nums[m];</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            result = negtive * nums[m];</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>Runtime: 30 ms</li>
+<li>Beats 55.80 % of java submissions</li>
+<li>时间复杂度：O(n*lgn)；空间复杂度：O(1)</li>
+</ul>
+<h4 id="Solution-2："><a href="#Solution-2：" class="headerlink" title="Solution 2："></a><strong>Solution 2：</strong></h4><p>遍历并记录实现。</p>
+<ul>
+<li>遍历整个数组，并依据<code>Solution 1</code>中讨论的两种结果分别记录三个最大值和两个最小值；</li>
+<li>注意初始时最大值和最小值的初值化值。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maximumProduct</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> max1 = Integer.MIN_VALUE, max2 = Integer.MIN_VALUE, max3 = Integer.MIN_VALUE, min1 = Integer.MAX_VALUE, min2 = Integer.MAX_VALUE;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> n : nums) &#123;</div><div class="line">            <span class="keyword">if</span> (n &gt; max1) &#123;</div><div class="line">                max3 = max2;</div><div class="line">                max2 = max1;</div><div class="line">                max1 = n;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (n &gt; max2) &#123;</div><div class="line">                max3 = max2;</div><div class="line">                max2 = n;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (n &gt; max3) &#123;</div><div class="line">                max3 = n;</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            <span class="keyword">if</span> (n &lt; min1) &#123;</div><div class="line">                min2 = min1;</div><div class="line">                min1 = n;</div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (n &lt; min2) &#123;</div><div class="line">                min2 = n;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> Math.max(max1*max2*max3, max1*min1*min2);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>Runtime: 13 ms</li>
+<li>Beats 82.49 % of java submissions</li>
+<li>时间复杂度：O(n)；空间复杂度：O(1)</li>
+</ul>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/02/23/Abstract_git_notes-1/" itemprop="url">
-              
-                <span itemprop="name">简洁git笔记(一)</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-02-23T16:44:00+08:00"
-              content="2017-02-23" >
-          02-23
-        </time>
-      </div>
+<blockquote class="blockquote-center">
+    The End
+</blockquote>
 
-    </header>
+  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://koalatree.github.io/" target="_blank">Mr.Tree</a><br/>有问题请 <a class="link-blue" href="mailto:koala_tree@outlook.com" target="_blank">邮件</a> 联系或者私信我的 <a class="link-blue" href="http://weibo.com/koalatree7" target="_blank">微博</a>。
+
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>谢谢你请我吃糖</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/reward/wechat.jpg" alt="Mr.Tree WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/reward/alipay.jpg" alt="Mr.Tree Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i>LeetCode</a>
+          
+            <a href="/tags/Array/" rel="tag"><i class="fa fa-tag"></i>Array</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/18/LeetCode-88：Merge Sorted Array/" rel="next" title="LeetCode-88：Merge Sorted Array (合并两排序数组)">
+                <i class="fa fa-chevron-left"></i> LeetCode-88：Merge Sorted Array (合并两排序数组)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -334,8 +524,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/avatar/avatar.jpg"
@@ -442,6 +641,17 @@
         
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Answer"><span class="nav-number">2.</span> <span class="nav-text">Answer</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Solution-1："><span class="nav-number">2.0.1.</span> <span class="nav-text">Solution 1：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Solution-2："><span class="nav-number">2.0.2.</span> <span class="nav-text">Solution 2：</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
       <!-- hack一个虚线出来 -->
       <section style="border-top:1px dotted #ccc;height:10px;"></section>
@@ -552,6 +762,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
