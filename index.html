@@ -292,6 +292,275 @@
             
               
                 
+                <a class="post-title-link" href="/2017/10/20/LeetCode-697：Degree of an Array (度相同的最小子数组)/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-10-20T18:28:46+08:00" content="2017-10-20">
+              2017-10-20
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+<!-- 自定义，用于添加摘要图片，文章中不显示 -->
+        
+<!-- 自定义结束 -->
+        
+          
+            <h1 id="LeetCode-697：Degree-of-an-Array-度相同的最小子数组"><a href="#LeetCode-697：Degree-of-an-Array-度相同的最小子数组" class="headerlink" title="LeetCode-697：Degree of an Array (度相同的最小子数组)"></a>LeetCode-697：Degree of an Array (度相同的最小子数组)</h1><hr>
+<p>layout: post<br>title: “LeetCode-697：Degree of an Array (度相同的最小子数组)”<br>date: 2017-10-19 22:10<br>categories: LeetCode<br>tags: </p>
+<pre><code>- LeetCode
+- Array
+</code></pre><p>reward: true<br>comments: false</p>
+<h2 id="summary-img"><a href="#summary-img" class="headerlink" title="summary_img:"></a>summary_img:</h2><h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given a non-empty array of non-negative integers nums, the degree of this array is defined as the maximum frequency of any one of its elements.</p>
+<p>Your task is to find the smallest possible length of a (contiguous) subarray of nums, that has the same degree as nums.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: [1, 2, 2, 3, 1]
+Output: 2
+
+Explanation: 
+The input array has a degree of 2 because both elements 1 and 2 appear twice.
+Of the subarrays that have the same degree:
+[1, 2, 2, 3, 1], [1, 2, 2, 3], [2, 2, 3, 1], [1, 2, 2], [2, 2, 3], [2, 2]
+The shortest length is 2. So return 2.
+</code></pre><p><strong>Example 2:</strong></p>
+<pre><code>Input: [1,2,2,3,1,4,2]
+Output: 6
+</code></pre><p><strong>Note:</strong></p>
+<ul>
+<li><code>nums.length</code> will be between 1 and 50,000.</li>
+<li><code>nums[i]</code> will be an integer between 0 and 49,999.</li>
+</ul>
+<p><strong>问题解析：</strong></p>
+<p>给定非空非负整数数组，数组的度是指数组中出现次数最多元素的个数。寻找最小连续子数组，使得子数组的度与原数组的度相同。返回子数组的长度。</p>
+<h2 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h2><h4 id="Solution-1："><a href="#Solution-1：" class="headerlink" title="Solution 1："></a><strong>Solution 1：</strong></h4><p>利用数据结构实现，Map、Dict。</p>
+<ul>
+<li>maxs记录元素的最大下标，mins记录元素的最小下标，cnts记录元素的出现个数，三者均是HashMap结构；</li>
+<li>通过遍历记录元素与上三个对应的记录，只要找到最大次数对应的元素，则就找到了该元素的最大和最小下标，即找到了度相同的最小子数组。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findShortestSubArray</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">        </div><div class="line">        Map&lt;Integer, Integer&gt; start = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</div><div class="line">        Map&lt;Integer, Integer&gt; end = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</div><div class="line">        Map&lt;Integer, Integer&gt; count  = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</div><div class="line">        </div><div class="line">        <span class="keyword">int</span> maxCount = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</div><div class="line">            <span class="keyword">if</span> (!count.containsKey(nums[i]))&#123;</div><div class="line">                count.put(nums[i], <span class="number">0</span>);</div><div class="line">                start.put(nums[i], i);</div><div class="line">            &#125;</div><div class="line">            count.put(nums[i], count.get(nums[i])+<span class="number">1</span>);</div><div class="line">            end.put(nums[i], i);</div><div class="line">            maxCount = Math.max(maxCount, count.get(nums[i]));</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">int</span> minLength = Integer.MAX_VALUE;</div><div class="line">        <span class="keyword">for</span> (Integer key : count.keySet())&#123;</div><div class="line">            <span class="keyword">if</span> (count.get(key) == maxCount)&#123;</div><div class="line">                minLength = Math.min(minLength,end.get(key)-start.get(key)+<span class="number">1</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> minLength;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>Runtime: 82 ms</li>
+<li>Beats 28.81 % of java submissions</li>
+<li>时间复杂度：O(n)；空间复杂度：O(1)</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/10/19/LeetCode-643：Maximum Average Subarray I (k个元素的最大子数组)/" itemprop="url">
+                  LeetCode-643：Maximum Average Subarray I (k个元素的最大子数组)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-10-19T10:10:00+08:00" content="2017-10-19">
+              2017-10-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+<!-- 自定义，用于添加摘要图片，文章中不显示 -->
+        
+<!-- 自定义结束 -->
+        
+          
+            <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given an array consisting of n integers, find the contiguous subarray of given length k that has the maximum average value. And you need to output the maximum average value.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: [1,12,-5,-6,50,3], k = 4
+Output: 12.75
+Explanation: Maximum average is (12-5-6+50)/4 = 51/4 = 12.75
+</code></pre><p><strong>Note:</strong></p>
+<ol>
+<li>1 &lt;= k &lt;= n &lt;= 30,000.</li>
+<li>Elements of the given array will be in the range [-10,000, 10,000].</li>
+</ol>
+<p><strong>问题解析：</strong></p>
+<p>从数组中找到k个连续元素和最大的子数组，返回最大子数组的平均值。</p>
+<h2 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h2><h4 id="Solution-1："><a href="#Solution-1：" class="headerlink" title="Solution 1："></a><strong>Solution 1：</strong></h4><p>利用滑动窗口实现。</p>
+<ul>
+<li>注意题目中给定的条件，数组中的元素范围为[-10000,10000]，元素个数在[1,30000]之间，和最大的情况下是：300000000，没有超出Java中int类型的范围：-2^{32}~2^{32}-1；</li>
+<li>利用大小为k的滑动窗口遍历找到和最大的子数组。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">findMaxAverage</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i++)&#123;</div><div class="line">            sum += nums[i];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">int</span> max = sum;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = k; i &lt; nums.length; i++)&#123;</div><div class="line">            sum += nums[i] - nums[i-k];</div><div class="line">            max = Math.max(sum,max);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> max * <span class="number">1.0</span> / k;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>Runtime: 21 ms</li>
+<li>Beats 61.16 % of java submissions</li>
+<li>时间复杂度：O(n)；空间复杂度：O(1)</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/10/18/LeetCode-628：Maximum Product of Three Numbers/" itemprop="url">
                   LeetCode-628：Maximum Product of Three Numbers (数组三元素最大乘积)
                 </a>
@@ -1225,242 +1494,6 @@ return [0, 1].
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/13/LeetCode-122_Best_Time_to_Buy_and_Sell_Stock_II/" itemprop="url">
-                  LeetCode-122：Best Time to Buy and Sell Stock II
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-04-13T21:50:00+08:00" content="2017-04-13">
-              2017-04-13
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-<!-- 自定义，用于添加摘要图片，文章中不显示 -->
-        
-<!-- 自定义结束 -->
-        
-          <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Say you have an array for which the ith element is the price of a given stock on day i.</p>
-<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times). However, you may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/04/13/LeetCode-122_Best_Time_to_Buy_and_Sell_Stock_II/" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/13/LeetCode-26_Remove_Duplicates_from_Sorted_Array/" itemprop="url">
-                  LeetCode-26：Remove Duplicates from Sorted Array
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-04-13T21:38:00+08:00" content="2017-04-13">
-              2017-04-13
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-<!-- 自定义，用于添加摘要图片，文章中不显示 -->
-        
-<!-- 自定义结束 -->
-        
-          <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.</p>
-<p>Do not allocate extra space for another array, you must do this in place with constant memory.</p>
-<p>For example,<br>Given input array nums = [1,1,2],</p>
-<p>Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively. It doesn’t matter what you leave beyond the new length.</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/04/13/LeetCode-26_Remove_Duplicates_from_Sorted_Array/" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1506,7 +1539,7 @@ return [0, 1].
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">23</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

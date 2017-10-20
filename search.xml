@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>%2F2017%2F10%2F20%2FLeetCode-697%EF%BC%9ADegree%20of%20an%20Array%20(%E5%BA%A6%E7%9B%B8%E5%90%8C%E7%9A%84%E6%9C%80%E5%B0%8F%E5%AD%90%E6%95%B0%E7%BB%84)%2F</url>
+    <content type="text"><![CDATA[LeetCode-697：Degree of an Array (度相同的最小子数组) layout: posttitle: “LeetCode-697：Degree of an Array (度相同的最小子数组)”date: 2017-10-19 22:10categories: LeetCodetags: - LeetCode - Array reward: truecomments: false summary_img:QuestionGiven a non-empty array of non-negative integers nums, the degree of this array is defined as the maximum frequency of any one of its elements. Your task is to find the smallest possible length of a (contiguous) subarray of nums, that has the same degree as nums. Example 1: Input: [1, 2, 2, 3, 1] Output: 2 Explanation: The input array has a degree of 2 because both elements 1 and 2 appear twice. Of the subarrays that have the same degree: [1, 2, 2, 3, 1], [1, 2, 2, 3], [2, 2, 3, 1], [1, 2, 2], [2, 2, 3], [2, 2] The shortest length is 2. So return 2. Example 2: Input: [1,2,2,3,1,4,2] Output: 6 Note: nums.length will be between 1 and 50,000. nums[i] will be an integer between 0 and 49,999. 问题解析： 给定非空非负整数数组，数组的度是指数组中出现次数最多元素的个数。寻找最小连续子数组，使得子数组的度与原数组的度相同。返回子数组的长度。 AnswerSolution 1：利用数据结构实现，Map、Dict。 maxs记录元素的最大下标，mins记录元素的最小下标，cnts记录元素的出现个数，三者均是HashMap结构； 通过遍历记录元素与上三个对应的记录，只要找到最大次数对应的元素，则就找到了该元素的最大和最小下标，即找到了度相同的最小子数组。 12345678910111213141516171819202122232425262728class Solution &#123; public int findShortestSubArray(int[] nums) &#123; Map&lt;Integer, Integer&gt; start = new HashMap&lt;Integer, Integer&gt;(); Map&lt;Integer, Integer&gt; end = new HashMap&lt;Integer, Integer&gt;(); Map&lt;Integer, Integer&gt; count = new HashMap&lt;Integer, Integer&gt;(); int maxCount = 0; for (int i = 0; i &lt; nums.length; i++)&#123; if (!count.containsKey(nums[i]))&#123; count.put(nums[i], 0); start.put(nums[i], i); &#125; count.put(nums[i], count.get(nums[i])+1); end.put(nums[i], i); maxCount = Math.max(maxCount, count.get(nums[i])); &#125; int minLength = Integer.MAX_VALUE; for (Integer key : count.keySet())&#123; if (count.get(key) == maxCount)&#123; minLength = Math.min(minLength,end.get(key)-start.get(key)+1); &#125; &#125; return minLength; &#125;&#125; Runtime: 82 ms Beats 28.81 % of java submissions 时间复杂度：O(n)；空间复杂度：O(1)]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode-643：Maximum Average Subarray I (k个元素的最大子数组)]]></title>
+    <url>%2F2017%2F10%2F19%2FLeetCode-643%EF%BC%9AMaximum%20Average%20Subarray%20I%20(k%E4%B8%AA%E5%85%83%E7%B4%A0%E7%9A%84%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84)%2F</url>
+    <content type="text"><![CDATA[QuestionGiven an array consisting of n integers, find the contiguous subarray of given length k that has the maximum average value. And you need to output the maximum average value. Example 1: Input: [1,12,-5,-6,50,3], k = 4 Output: 12.75 Explanation: Maximum average is (12-5-6+50)/4 = 51/4 = 12.75 Note: 1 &lt;= k &lt;= n &lt;= 30,000. Elements of the given array will be in the range [-10,000, 10,000]. 问题解析： 从数组中找到k个连续元素和最大的子数组，返回最大子数组的平均值。 AnswerSolution 1：利用滑动窗口实现。 注意题目中给定的条件，数组中的元素范围为[-10000,10000]，元素个数在[1,30000]之间，和最大的情况下是：300000000，没有超出Java中int类型的范围：-2^{32}~2^{32}-1； 利用大小为k的滑动窗口遍历找到和最大的子数组。 123456789101112131415class Solution &#123; public double findMaxAverage(int[] nums, int k) &#123; int sum = 0; for (int i = 0; i &lt; k; i++)&#123; sum += nums[i]; &#125; int max = sum; for (int i = k; i &lt; nums.length; i++)&#123; sum += nums[i] - nums[i-k]; max = Math.max(sum,max); &#125; return max * 1.0 / k; &#125;&#125; Runtime: 21 ms Beats 61.16 % of java submissions 时间复杂度：O(n)；空间复杂度：O(1)]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Array</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode-628：Maximum Product of Three Numbers (数组三元素最大乘积)]]></title>
     <url>%2F2017%2F10%2F18%2FLeetCode-628%EF%BC%9AMaximum%20Product%20of%20Three%20Numbers%2F</url>
     <content type="text"><![CDATA[QuestionGiven an integer array, find three numbers whose product is maximum and output the maximum product. Example 1: Input: [1,2,3] Output: 6 Example 2: Input: [1,2,3,4] Output: 24 Note: The length of the given array will be in range [3,104] and all elements are in the range [-1000, 1000]. Multiplication of any three numbers in the input won’t exceed the range of 32-bit signed integer. 问题解析： 从数组中找到任意三个元素乘积的最大值，数组元素范围在[-1000,1000]内。 AnswerSolution 1：查找实现即可。 注意题目中给定的条件，数组中的元素范围为[-1000,1000]，所以元素存在负数，不要忽略负负得正的情况； 通过分析可以知道，只要将数组排序以后，我们需要讨论的元素就只存在数组的首和尾； 三元素最大值的乘积只有两种情况：一种是末尾第一个元素和末尾倒数二三个元素相乘；一种是末尾第一个元素和首部第一二个元素相乘。 1234567891011121314151617class Solution &#123; public int maximumProduct(int[] nums) &#123; Arrays.sort(nums); int m = nums.length-1; int negtive = nums[0] * nums[1]; int positive = nums[m-1] * nums[m-2]; int result = 0; if (negtive &lt; positive)&#123; result = positive * nums[m]; &#125;else&#123; result = negtive * nums[m]; &#125; return result; &#125;&#125; Runtime: 30 ms Beats 55.80 % of java submissions 时间复杂度：O(n*lgn)；空间复杂度：O(1) Solution 2：遍历并记录实现。 遍历整个数组，并依据Solution 1中讨论的两种结果分别记录三个最大值和两个最小值； 注意初始时最大值和最小值的初值化值。 12345678910111213141516171819202122232425class Solution &#123; public int maximumProduct(int[] nums) &#123; int max1 = Integer.MIN_VALUE, max2 = Integer.MIN_VALUE, max3 = Integer.MIN_VALUE, min1 = Integer.MAX_VALUE, min2 = Integer.MAX_VALUE; for (int n : nums) &#123; if (n &gt; max1) &#123; max3 = max2; max2 = max1; max1 = n; &#125; else if (n &gt; max2) &#123; max3 = max2; max2 = n; &#125; else if (n &gt; max3) &#123; max3 = n; &#125; if (n &lt; min1) &#123; min2 = min1; min1 = n; &#125; else if (n &lt; min2) &#123; min2 = n; &#125; &#125; return Math.max(max1*max2*max3, max1*min1*min2); &#125;&#125; Runtime: 13 ms Beats 82.49 % of java submissions 时间复杂度：O(n)；空间复杂度：O(1)]]></content>
@@ -157,9 +174,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[LeetCode-119：Pascal's Triangle II]]></title>
-    <url>%2F2017%2F04%2F11%2FLeetCode-119_Pascal's_Triangle_II%2F</url>
-    <content type="text"><![CDATA[QuestionGiven an index k, return the kth row of the Pascal’s triangle. For example, given k = 3,Return [1,3,3,1]. Note:optimize your algorithm to use only O(k) extra space. Idea给定一个系数k，返回Pascal三角的第k行，将优化算法，使得算法的空间复杂度为O(k). 同LeetCode-118，直接使用Pascal三角的生成方式进行解题. 该题较118更为简单，无需要对Pascal三角的结构进行存储，仅需依次生成行至所需的行数即可； 使用ArrayList存储行. Code ArrayList—Java 123456789101112public class Solution &#123; public List&lt;Integer&gt; getRow(int rowIndex) &#123; ArrayList&lt;Integer&gt; row = new ArrayList&lt;Integer&gt;(); for (int i=0; i&lt;rowIndex+1; i++)&#123; row.add(0,1); for(int j=1; j&lt;row.size()-1;j++)&#123; row.set(j, row.get(j)+row.get(j+1)); &#125; &#125; return row; &#125;&#125; 虽然该题较118更为简单，但是依然需要注意，需要返回的是第k行，这里第0行为[1].]]></content>
+    <title><![CDATA[LeetCode-118：Pascal's Triangle]]></title>
+    <url>%2F2017%2F04%2F11%2FLeetCode-118_Pascal's_Triangle%2F</url>
+    <content type="text"><![CDATA[QuestionGiven numRows, generate the first numRows of Pascal’s triangle. For example, given numRows = 5,Return[ [1], [1,1], [1,2,1], [1,3,3,1], [1,4,6,4,1]] Idea给定行数，生成制定行数的Pascal’s triangle(又称，杨辉三角)。 直接使用Pascal三角的生成方式进行解题. Java： 使用ArrayList]]></content>
       <categories>
         <category>LeetCode</category>
       </categories>
@@ -169,9 +186,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[LeetCode-118：Pascal's Triangle]]></title>
-    <url>%2F2017%2F04%2F11%2FLeetCode-118_Pascal's_Triangle%2F</url>
-    <content type="text"><![CDATA[QuestionGiven numRows, generate the first numRows of Pascal’s triangle. For example, given numRows = 5,Return[ [1], [1,1], [1,2,1], [1,3,3,1], [1,4,6,4,1]] Idea给定行数，生成制定行数的Pascal’s triangle(又称，杨辉三角)。 直接使用Pascal三角的生成方式进行解题. Java： 使用ArrayList]]></content>
+    <title><![CDATA[LeetCode-119：Pascal's Triangle II]]></title>
+    <url>%2F2017%2F04%2F11%2FLeetCode-119_Pascal's_Triangle_II%2F</url>
+    <content type="text"><![CDATA[QuestionGiven an index k, return the kth row of the Pascal’s triangle. For example, given k = 3,Return [1,3,3,1]. Note:optimize your algorithm to use only O(k) extra space. Idea给定一个系数k，返回Pascal三角的第k行，将优化算法，使得算法的空间复杂度为O(k). 同LeetCode-118，直接使用Pascal三角的生成方式进行解题. 该题较118更为简单，无需要对Pascal三角的结构进行存储，仅需依次生成行至所需的行数即可； 使用ArrayList存储行. Code ArrayList—Java 123456789101112public class Solution &#123; public List&lt;Integer&gt; getRow(int rowIndex) &#123; ArrayList&lt;Integer&gt; row = new ArrayList&lt;Integer&gt;(); for (int i=0; i&lt;rowIndex+1; i++)&#123; row.add(0,1); for(int j=1; j&lt;row.size()-1;j++)&#123; row.set(j, row.get(j)+row.get(j+1)); &#125; &#125; return row; &#125;&#125; 虽然该题较118更为简单，但是依然需要注意，需要返回的是第k行，这里第0行为[1].]]></content>
       <categories>
         <category>LeetCode</category>
       </categories>

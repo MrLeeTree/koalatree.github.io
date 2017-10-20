@@ -84,16 +84,17 @@
 
 
 
-<meta name="description" content="生活是一颗长满可能的树">
-<meta property="og:type" content="website">
+<meta name="description" content="LeetCode-697：Degree of an Array (度相同的最小子数组) layout: posttitle: “LeetCode-697：Degree of an Array (度相同的最小子数组)”date: 2017-10-19 22:10categories: LeetCodetags:  - LeetCode - Array reward: truecomments: fa">
+<meta property="og:type" content="article">
 <meta property="og:title" content="大树先生的博客">
-<meta property="og:url" content="https://koalatree.github.io/categories/TensorFlow/index.html">
+<meta property="og:url" content="https://koalatree.github.io/2017/10/20/LeetCode-697：Degree of an Array (度相同的最小子数组)/index.html">
 <meta property="og:site_name" content="大树先生的博客">
-<meta property="og:description" content="生活是一颗长满可能的树">
+<meta property="og:description" content="LeetCode-697：Degree of an Array (度相同的最小子数组) layout: posttitle: “LeetCode-697：Degree of an Array (度相同的最小子数组)”date: 2017-10-19 22:10categories: LeetCodetags:  - LeetCode - Array reward: truecomments: fa">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-20T10:27:57.438Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大树先生的博客">
-<meta name="twitter:description" content="生活是一颗长满可能的树">
+<meta name="twitter:description" content="LeetCode-697：Degree of an Array (度相同的最小子数组) layout: posttitle: “LeetCode-697：Degree of an Array (度相同的最小子数组)”date: 2017-10-19 22:10categories: LeetCodetags:  - LeetCode - Array reward: truecomments: fa">
 
 
 
@@ -114,9 +115,9 @@
 
 
 
-  <link rel="canonical" href="https://koalatree.github.io/categories/TensorFlow/"/>
+  <link rel="canonical" href="https://koalatree.github.io/2017/10/20/LeetCode-697：Degree of an Array (度相同的最小子数组)/"/>
 
-  <title> 分类: TensorFlow | 大树先生的博客 </title>
+  <title>  | 大树先生的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -137,7 +138,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -268,47 +269,208 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        TensorFlow
-        <small>分类</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-10-20T18:28:46+08:00" content="2017-10-20">
+              2017-10-20
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">热度
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>℃
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h1 id="LeetCode-697：Degree-of-an-Array-度相同的最小子数组"><a href="#LeetCode-697：Degree-of-an-Array-度相同的最小子数组" class="headerlink" title="LeetCode-697：Degree of an Array (度相同的最小子数组)"></a>LeetCode-697：Degree of an Array (度相同的最小子数组)</h1><hr>
+<p>layout: post<br>title: “LeetCode-697：Degree of an Array (度相同的最小子数组)”<br>date: 2017-10-19 22:10<br>categories: LeetCode<br>tags: </p>
+<pre><code>- LeetCode
+- Array
+</code></pre><p>reward: true<br>comments: false</p>
+<h2 id="summary-img"><a href="#summary-img" class="headerlink" title="summary_img:"></a>summary_img:</h2><h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given a non-empty array of non-negative integers nums, the degree of this array is defined as the maximum frequency of any one of its elements.</p>
+<p>Your task is to find the smallest possible length of a (contiguous) subarray of nums, that has the same degree as nums.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: [1, 2, 2, 3, 1]
+Output: 2
 
-      <h1 class="post-title">
+Explanation: 
+The input array has a degree of 2 because both elements 1 and 2 appear twice.
+Of the subarrays that have the same degree:
+[1, 2, 2, 3, 1], [1, 2, 2, 3], [2, 2, 3, 1], [1, 2, 2], [2, 2, 3], [2, 2]
+The shortest length is 2. So return 2.
+</code></pre><p><strong>Example 2:</strong></p>
+<pre><code>Input: [1,2,2,3,1,4,2]
+Output: 6
+</code></pre><p><strong>Note:</strong></p>
+<ul>
+<li><code>nums.length</code> will be between 1 and 50,000.</li>
+<li><code>nums[i]</code> will be an integer between 0 and 49,999.</li>
+</ul>
+<p><strong>问题解析：</strong></p>
+<p>给定非空非负整数数组，数组的度是指数组中出现次数最多元素的个数。寻找最小连续子数组，使得子数组的度与原数组的度相同。返回子数组的长度。</p>
+<h2 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h2><h4 id="Solution-1："><a href="#Solution-1：" class="headerlink" title="Solution 1："></a><strong>Solution 1：</strong></h4><p>利用数据结构实现，Map、Dict。</p>
+<ul>
+<li>maxs记录元素的最大下标，mins记录元素的最小下标，cnts记录元素的出现个数，三者均是HashMap结构；</li>
+<li>通过遍历记录元素与上三个对应的记录，只要找到最大次数对应的元素，则就找到了该元素的最大和最小下标，即找到了度相同的最小子数组。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findShortestSubArray</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">        </div><div class="line">        Map&lt;Integer, Integer&gt; start = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</div><div class="line">        Map&lt;Integer, Integer&gt; end = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</div><div class="line">        Map&lt;Integer, Integer&gt; count  = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</div><div class="line">        </div><div class="line">        <span class="keyword">int</span> maxCount = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</div><div class="line">            <span class="keyword">if</span> (!count.containsKey(nums[i]))&#123;</div><div class="line">                count.put(nums[i], <span class="number">0</span>);</div><div class="line">                start.put(nums[i], i);</div><div class="line">            &#125;</div><div class="line">            count.put(nums[i], count.get(nums[i])+<span class="number">1</span>);</div><div class="line">            end.put(nums[i], i);</div><div class="line">            maxCount = Math.max(maxCount, count.get(nums[i]));</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">int</span> minLength = Integer.MAX_VALUE;</div><div class="line">        <span class="keyword">for</span> (Integer key : count.keySet())&#123;</div><div class="line">            <span class="keyword">if</span> (count.get(key) == maxCount)&#123;</div><div class="line">                minLength = Math.min(minLength,end.get(key)-start.get(key)+<span class="number">1</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> minLength;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>Runtime: 82 ms</li>
+<li>Beats 28.81 % of java submissions</li>
+<li>时间复杂度：O(n)；空间复杂度：O(1)</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/02/21/TensorFlow_for_win10_system/" itemprop="url">
-              
-                <span itemprop="name">windows10系统安装TensorFlow</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-02-21T14:57:00+08:00"
-              content="2017-02-21" >
-          02-21
-        </time>
-      </div>
+<blockquote class="blockquote-center">
+    The End
+</blockquote>
 
-    </header>
+  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://koalatree.github.io/" target="_blank">Mr.Tree</a><br/>有问题请 <a class="link-blue" href="mailto:koala_tree@outlook.com" target="_blank">邮件</a> 联系或者私信我的 <a class="link-blue" href="http://weibo.com/koalatree7" target="_blank">微博</a>。
+
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>谢谢你请我吃糖</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/reward/wechat.jpg" alt="Mr.Tree WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/reward/alipay.jpg" alt="Mr.Tree Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/19/LeetCode-643：Maximum Average Subarray I (k个元素的最大子数组)/" rel="next" title="LeetCode-643：Maximum Average Subarray I (k个元素的最大子数组)">
+                <i class="fa fa-chevron-left"></i> LeetCode-643：Maximum Average Subarray I (k个元素的最大子数组)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
 
+      
+    </div>
+  </div>
 
 
           </div>
@@ -316,6 +478,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -335,8 +501,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/avatar/avatar.jpg"
@@ -443,6 +618,17 @@
         
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-697：Degree-of-an-Array-度相同的最小子数组"><span class="nav-number">1.</span> <span class="nav-text">LeetCode-697：Degree of an Array (度相同的最小子数组)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#summary-img"><span class="nav-number">1.1.</span> <span class="nav-text">summary_img:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.2.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Answer"><span class="nav-number">1.3.</span> <span class="nav-text">Answer</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Solution-1："><span class="nav-number">1.3.0.1.</span> <span class="nav-text">Solution 1：</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
       <!-- hack一个虚线出来 -->
       <section style="border-top:1px dotted #ccc;height:10px;"></section>
@@ -553,6 +739,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

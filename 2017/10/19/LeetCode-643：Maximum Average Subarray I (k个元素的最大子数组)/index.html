@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT, koalatree, Mr.Tree, Blog, Node.js, Git, Python, JAVA, ML, DL, Tensorflow, Hadoop, Spark" />
+  <meta name="keywords" content="LeetCode,Array," />
 
 
 
@@ -84,16 +84,18 @@
 
 
 
-<meta name="description" content="生活是一颗长满可能的树">
-<meta property="og:type" content="website">
-<meta property="og:title" content="大树先生的博客">
-<meta property="og:url" content="https://koalatree.github.io/categories/TensorFlow/index.html">
+<meta name="description" content="QuestionGiven an array consisting of n integers, find the contiguous subarray of given length k that has the maximum average value. And you need to output the maximum average value. Example 1: Input:">
+<meta name="keywords" content="LeetCode,Array">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode-643：Maximum Average Subarray I (k个元素的最大子数组)">
+<meta property="og:url" content="https://koalatree.github.io/2017/10/19/LeetCode-643：Maximum Average Subarray I (k个元素的最大子数组)/index.html">
 <meta property="og:site_name" content="大树先生的博客">
-<meta property="og:description" content="生活是一颗长满可能的树">
+<meta property="og:description" content="QuestionGiven an array consisting of n integers, find the contiguous subarray of given length k that has the maximum average value. And you need to output the maximum average value. Example 1: Input:">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-20T10:28:17.532Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="大树先生的博客">
-<meta name="twitter:description" content="生活是一颗长满可能的树">
+<meta name="twitter:title" content="LeetCode-643：Maximum Average Subarray I (k个元素的最大子数组)">
+<meta name="twitter:description" content="QuestionGiven an array consisting of n integers, find the contiguous subarray of given length k that has the maximum average value. And you need to output the maximum average value. Example 1: Input:">
 
 
 
@@ -114,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="https://koalatree.github.io/categories/TensorFlow/"/>
+  <link rel="canonical" href="https://koalatree.github.io/2017/10/19/LeetCode-643：Maximum Average Subarray I (k个元素的最大子数组)/"/>
 
-  <title> 分类: TensorFlow | 大树先生的博客 </title>
+  <title> LeetCode-643：Maximum Average Subarray I (k个元素的最大子数组) | 大树先生的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -137,7 +139,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -268,47 +270,223 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        TensorFlow
-        <small>分类</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                LeetCode-643：Maximum Average Subarray I (k个元素的最大子数组)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-10-19T10:10:00+08:00" content="2017-10-19">
+              2017-10-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">热度
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>℃
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given an array consisting of n integers, find the contiguous subarray of given length k that has the maximum average value. And you need to output the maximum average value.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input: [1,12,-5,-6,50,3], k = 4
+Output: 12.75
+Explanation: Maximum average is (12-5-6+50)/4 = 51/4 = 12.75
+</code></pre><p><strong>Note:</strong></p>
+<ol>
+<li>1 &lt;= k &lt;= n &lt;= 30,000.</li>
+<li>Elements of the given array will be in the range [-10,000, 10,000].</li>
+</ol>
+<p><strong>问题解析：</strong></p>
+<p>从数组中找到k个连续元素和最大的子数组，返回最大子数组的平均值。</p>
+<h2 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h2><h4 id="Solution-1："><a href="#Solution-1：" class="headerlink" title="Solution 1："></a><strong>Solution 1：</strong></h4><p>利用滑动窗口实现。</p>
+<ul>
+<li>注意题目中给定的条件，数组中的元素范围为[-10000,10000]，元素个数在[1,30000]之间，和最大的情况下是：300000000，没有超出Java中int类型的范围：-2^{32}~2^{32}-1；</li>
+<li>利用大小为k的滑动窗口遍历找到和最大的子数组。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">findMaxAverage</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i++)&#123;</div><div class="line">            sum += nums[i];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">int</span> max = sum;</div><div class="line">        </div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = k; i &lt; nums.length; i++)&#123;</div><div class="line">            sum += nums[i] - nums[i-k];</div><div class="line">            max = Math.max(sum,max);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> max * <span class="number">1.0</span> / k;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>Runtime: 21 ms</li>
+<li>Beats 61.16 % of java submissions</li>
+<li>时间复杂度：O(n)；空间复杂度：O(1)</li>
+</ul>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/02/21/TensorFlow_for_win10_system/" itemprop="url">
-              
-                <span itemprop="name">windows10系统安装TensorFlow</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-02-21T14:57:00+08:00"
-              content="2017-02-21" >
-          02-21
-        </time>
-      </div>
+<blockquote class="blockquote-center">
+    The End
+</blockquote>
 
-    </header>
+  <span id="inline-green" style="border-radius:3px;">作者</span>：<a class="link-blue" href="https://koalatree.github.io/" target="_blank">Mr.Tree</a><br/>有问题请 <a class="link-blue" href="mailto:koala_tree@outlook.com" target="_blank">邮件</a> 联系或者私信我的 <a class="link-blue" href="http://weibo.com/koalatree7" target="_blank">微博</a>。
+
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>谢谢你请我吃糖</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/reward/wechat.jpg" alt="Mr.Tree WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/reward/alipay.jpg" alt="Mr.Tree Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i>LeetCode</a>
+          
+            <a href="/tags/Array/" rel="tag"><i class="fa fa-tag"></i>Array</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/18/LeetCode-628：Maximum Product of Three Numbers/" rel="next" title="LeetCode-628：Maximum Product of Three Numbers (数组三元素最大乘积)">
+                <i class="fa fa-chevron-left"></i> LeetCode-628：Maximum Product of Three Numbers (数组三元素最大乘积)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/20/LeetCode-697：Degree of an Array (度相同的最小子数组)/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
 
+      
+    </div>
+  </div>
 
 
           </div>
@@ -335,8 +513,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/avatar/avatar.jpg"
@@ -443,6 +630,17 @@
         
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Answer"><span class="nav-number">2.</span> <span class="nav-text">Answer</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Solution-1："><span class="nav-number">2.0.1.</span> <span class="nav-text">Solution 1：</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
       <!-- hack一个虚线出来 -->
       <section style="border-top:1px dotted #ccc;height:10px;"></section>
@@ -553,6 +751,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
