@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Google 面试题：分饼干]]></title>
+    <url>%2F2017%2F10%2F22%2FGoogle%20%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%9A%E5%88%86%E9%A5%BC%E5%B9%B2%2F</url>
+    <content type="text"><![CDATA[Question假设有一群孩子和一些饼干，每一块饼干j的大小为s(j)，同时每一个孩子i被分到的饼干大小至少为g(i)，即s(j)&gt;=g(i)时这个孩子才会满足，g(i)称为孩子i的满足度。我们的目标是将饼干分配给孩子，使得到满足的孩子尽可能多。保证每个g(i)为正，且不能将多块饼干分给一个孩子或将一块饼干分给多个孩子。 example1： 输入: [1,2,3], [1,1] 输出: 1 说明: 三个孩子的满足度分别为1,2,3，两块饼干的大小均为1。饼干的大小为1，只能满足第一个孩子，所以输出1。 example2： 输入: [1,2], [1,2,3] 输出: 2 说明: 两个孩子的满足度分别为1,2，三块饼干的大小分别为1,2,3。这三块饼干的大小足以满足这两个孩子，所以输出2。 AnswerSolution 1：使用贪心的思想。 为了使得满足的孩子尽可能的多，所以我们在分饼干的时候，要使得在满足其满意度的情况下，每个孩子分得的饼干尽可能的小； 从小到大排序孩子们的满意度g(i)，对单个孩子i，从剩余的饼干中寻找最小的能够满足该孩子的饼干； 将数组s(j)和g(i)均从小到大排序，分别用指针i和j来指示孩子和饼干。 12345678910111213class Solution &#123; public int findContentChildren(int[] g, int[] s)&#123; Arrays.sort(g); Arrays.sort(s); int i, j; for (i = j = 0; i &lt; g.length &amp;&amp; j &lt; s.length; j++)&#123; if (g[i] &lt;= s[j])&#123; i++; &#125; &#125; return i; &#125;&#125; 时间复杂度：O(nlgn)，这里排序的时间复杂度是O(nlgn)，遍历的时间复杂度是O(n)，和为O(nlgn) 空间复杂度：O(1)]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Array</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode-624：Maximum Distance in Arrays (多数组找元素最大距离)]]></title>
+    <url>%2F2017%2F10%2F22%2FLeetCode-624%EF%BC%9AMaximum%20Distance%20in%20Arrays%20(%E5%A4%9A%E6%95%B0%E7%BB%84%E6%89%BE%E5%85%83%E7%B4%A0%E6%9C%80%E5%A4%A7%E8%B7%9D%E7%A6%BB)%2F</url>
+    <content type="text"><![CDATA[QuestionGiven m arrays, and each array is sorted in ascending order. Now you can pick up two integers from two different arrays (each array picks one) and calculate the distance. We define the distance between two integers a and b to be their absolute difference |a-b|. Your task is to find the maximum distance. Example 1: Input: [[1,2,3], [4,5], [1,2,3]] Output: 4 Explanation: One way to reach the maximum distance 4 is to pick 1 in the first or third array and pick 5 in the second array. Note: Each given array will have at least 1 number. There will be at least two non-empty arrays； The total number of the integers in all the m arrays will be in the range of [2, 10000]； The integers in the m arrays will be in the range of [-10000, 10000]. 问题解析： 给定的多个（至少两个，且非空）按升序排序好的数组中，从其中任意两个数组中各选择一个元素，计算两个元素的距离，找到最大距离。 AnswerSolution 1：遍历记录最大值距离和最大值最小值即可。 注意不能选择同一个数组中的最大值和最小值； 因为题目中给出的条件是多个数组均已经拍排好序，所以可以将多个数组视为一个数组，数组中的一个元素由两个值组成：arrays[i][0]和arrays[i][i.length-1]； 遍历过程中需要保存每次计算的最大距离以及最大值和最小值； 注意距离要通过两个元素之交叉计算得出，这样可以避免同一个元素大小值计算的问题。 1234567891011121314class Solution &#123; public int maxDistance(List&lt;List&lt;Integer&gt;&gt; arrays) &#123; int res = 0; int min = arrays.get(0).get(0); int max = arrays.get(0).get(arrays.get(0).size() - 1); for (int i = 1; i &lt; arrays.size(); i++) &#123; List&lt;Integer&gt; array = arrays.get(i); res = Math.max(Math.abs(min - array.get(array.size() - 1)), Math.max(Math.abs(array.get(0) - max), res)); min = Math.min(min, array.get(0)); max = Math.max(max, array.get(array.size() - 1)); &#125; return res; &#125;&#125; 时间复杂度：O(n)；空间复杂度：O(1)]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Array</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode-697：Degree of an Array (度相同的最小子数组)]]></title>
     <url>%2F2017%2F10%2F19%2FLeetCode-697%EF%BC%9ADegree%20of%20an%20Array%20(%E5%BA%A6%E7%9B%B8%E5%90%8C%E7%9A%84%E6%9C%80%E5%B0%8F%E5%AD%90%E6%95%B0%E7%BB%84)%2F</url>
     <content type="text"><![CDATA[QuestionGiven a non-empty array of non-negative integers nums, the degree of this array is defined as the maximum frequency of any one of its elements. Your task is to find the smallest possible length of a (contiguous) subarray of nums, that has the same degree as nums. Example 1: Input: [1, 2, 2, 3, 1] Output: 2 Explanation: The input array has a degree of 2 because both elements 1 and 2 appear twice. Of the subarrays that have the same degree: [1, 2, 2, 3, 1], [1, 2, 2, 3], [2, 2, 3, 1], [1, 2, 2], [2, 2, 3], [2, 2] The shortest length is 2. So return 2. Example 2: Input: [1,2,2,3,1,4,2] Output: 6 Note: nums.length will be between 1 and 50,000. nums[i] will be an integer between 0 and 49,999. 问题解析： 给定非空非负整数数组，数组的度是指数组中出现次数最多元素的个数。寻找最小连续子数组，使得子数组的度与原数组的度相同。返回子数组的长度。 AnswerSolution 1：利用数据结构实现，Map、Dict。 maxs记录元素的最大下标，mins记录元素的最小下标，cnts记录元素的出现个数，三者均是HashMap结构； 通过遍历记录元素与上三个对应的记录，只要找到最大次数对应的元素，则就找到了该元素的最大和最小下标，即找到了度相同的最小子数组。 12345678910111213141516171819202122232425262728class Solution &#123; public int findShortestSubArray(int[] nums) &#123; Map&lt;Integer, Integer&gt; start = new HashMap&lt;Integer, Integer&gt;(); Map&lt;Integer, Integer&gt; end = new HashMap&lt;Integer, Integer&gt;(); Map&lt;Integer, Integer&gt; count = new HashMap&lt;Integer, Integer&gt;(); int maxCount = 0; for (int i = 0; i &lt; nums.length; i++)&#123; if (!count.containsKey(nums[i]))&#123; count.put(nums[i], 0); start.put(nums[i], i); &#125; count.put(nums[i], count.get(nums[i])+1); end.put(nums[i], i); maxCount = Math.max(maxCount, count.get(nums[i])); &#125; int minLength = Integer.MAX_VALUE; for (Integer key : count.keySet())&#123; if (count.get(key) == maxCount)&#123; minLength = Math.min(minLength,end.get(key)-start.get(key)+1); &#125; &#125; return minLength; &#125;&#125; Runtime: 82 ms Beats 28.81 % of java submissions 时间复杂度：O(n)；空间复杂度：O(1)]]></content>
