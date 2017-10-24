@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode-167：Two Sum II - Input array is sorted (固定和的元素的索引 II)]]></title>
+    <url>%2F2017%2F10%2F24%2FLeetCode-167%EF%BC%9ATwo%20Sum%20II%20-%20Input%20array%20is%20sorted%20(%E5%9B%BA%E5%AE%9A%E5%92%8C%E7%9A%84%E5%85%83%E7%B4%A0%E7%9A%84%E7%B4%A2%E5%BC%95%20II)%2F</url>
+    <content type="text"><![CDATA[QuestionGiven an array of integers that is already sorted in ascending order, find two numbers such that they add up to a specific target number. The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. Please note that your returned answers (both index1 and index2) are not zero-based. You may assume that each input would have exactly one solution and you may not use the same element twice. Example Input: numbers={2, 7, 11, 15}, target=9 Output: index1=1, index2=2 问题解析： 给定升序排序数组，找到两个和为给定数字的元素，返回二者位置。注意index1 &lt; index2，且不使用重复元素。 AnswerSolution 1：左右两指针相加靠近。 注意题目与LeetCode-1：Two Sum存在不同的地方，本题要求index1 &lt; index2，可以使用除与LeetCode-1相同的HashMap之外其他的方法。 题中要求index1 &lt; index2，那么我们可以利用这样的性质，设置左右两个指针，从两端向中间逼近，每次都用两个数判断是否等于目标值，等于则返回，不等则判断大小，增减左右指针。 123456789101112131415class Solution &#123; public int[] twoSum(int[] numbers, int target) &#123; int left = 0; int right = numbers.length-1; while (numbers[left] + numbers[right] != target)&#123; if (numbers[left] + numbers[right] &gt; target)&#123; right--; &#125;else&#123; left++; &#125; &#125; return new int[]&#123;left+1, right+1&#125;; &#125;&#125; 时间复杂度：O(n)；空间复杂度：O(1)]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Array</tag>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode-661：Image Smoother (灰度图像平滑)]]></title>
+    <url>%2F2017%2F10%2F23%2FLeetCode-661%EF%BC%9AImage%20Smoother%20(%E7%81%B0%E5%BA%A6%E5%9B%BE%E5%83%8F%E5%B9%B3%E6%BB%91)%2F</url>
+    <content type="text"><![CDATA[QuestionGiven a 2D integer matrix M representing the gray scale of an image, you need to design a smoother to make the gray scale of each cell becomes the average gray scale (rounding down) of all the 8 surrounding cells and itself. If a cell has less than 8 surrounding cells, then use as many as you can. Example 1: Input: [[1,1,1], [1,0,1], [1,1,1]] Output: [[0, 0, 0], [0, 0, 0], [0, 0, 0]] Explanation: For the point (0,0), (0,2), (2,0), (2,2): floor(3/4) = floor(0.75) = 0 For the point (0,1), (1,0), (1,2), (2,1): floor(5/6) = floor(0.83333333) = 0 For the point (1,1): floor(8/9) = floor(0.88888889) = 0 Note: The value in the given matrix is in the range of [0, 255]. The length and width of the given matrix are in the range of [1, 150]. 问题解析： 给定表示图像灰度的二维整数矩阵M，平滑图像，使每个单元格的灰度值成为所有包括周围8个单元格及其本身的平均灰度（舍入）。如果周围的单元格小于8个，则使用尽可能多的单元格。 AnswerSolution 1：题目简单，遍历实现即可。 对于这样的题目，我们一般来说第一反应是对每个点分三种情况进行讨论，处于角落的点用4个平滑，处于边的点用6个平滑，其它点用9个平滑。 虽然上面直观的想法的算法运行时间可能不会很高，但是在实现上比较繁琐，这里我们换一个角度考虑。对于每一个点（暂时不考虑边角处点），计算该点的平滑时，共需要计算其本身及周围的9个点，也就是在该点的基础上在行和列上分别进行{-1,0,1}的索引计算，实现从左上角（-1,1）到右下角（1,1）的全部位置索引。我们用两个这样的for循环来实现。在进行计算前加入一个判断函数，来判断这样的点是否超出矩阵范围，如果超出则不进行计算。 题目价值不高，理解就可以。 1234567891011121314151617181920212223242526272829303132class Solution &#123; public int[][] imageSmoother(int[][] M) &#123; if (M == null) return null; int rows = M.length; if (rows == 0) return new int[0][]; int cols = M[0].length; int result[][] = new int[rows][cols]; for (int row = 0; row &lt; rows; row++)&#123; for (int col = 0; col &lt; cols; col++)&#123; int count = 0; int sum = 0; for (int rInc : new int[]&#123;-1, 0, 1&#125;)&#123; for (int cInc : new int[]&#123;-1, 0, 1&#125;)&#123; if (isValid(row + rInc, col + cInc, rows, cols))&#123; count++; sum += M[row + rInc][col + cInc]; &#125; &#125; &#125; result[row][col] = sum / count; &#125; &#125; return result; &#125; private boolean isValid(int x, int y, int rows, int cols)&#123; return x &gt;=0 &amp;&amp; x &lt; rows &amp;&amp; y &gt;=0 &amp;&amp; y &lt; cols; &#125;&#125; 果然这样实现的耗时不比分情况判断的耗时少：beats 8.05 % of java submissions。]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Array</tag>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Google 面试题：数组补丁]]></title>
+    <url>%2F2017%2F10%2F23%2FGoogle%20%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%9A%E6%95%B0%E7%BB%84%E8%A1%A5%E4%B8%81%2F</url>
+    <content type="text"><![CDATA[Question给出一个从小到大排好序的整数数组 nums 和一个整数 n，在数组中添加若干个补丁（元素）使得 [1,n] 的区间内的所有数都可以表示成 nums 中若干个数的和。返回最少需要添加的补丁个数。 Example1： nums = [1, 3], n = 6 返回1，表示至少需要添加1个数｛2｝，才可以表示1到6之间所有数。 Example2: nums = [1, 5, 10], n = 20 返回2，表示至少需要添加两个数｛2，4｝，才可以表示1到20之间所有数。 AnswerSolution 1：使用贪心的思想。 可以考虑相似的简单问题：如果nums数组为空，那么最少需要多少个数字才能表示1到n之间所有数？贪心算法，即按照1、2、4、8…都顺序添加，每次加入都数都比之前所有数的总和大1，直到总和大于n； 对于本题，则是预先在数组中给出了一些数，但贪心策略实质是相同的：假设nums当前至多可以表示1到m之间的所有数，加入m+1，则数组可以表示从1到2m+1的任意的数，令新的m=2m+1；直到m大于等于n，则数组可以表示从1到n的所有数。 12345678910111213141516171819202122232425262728293031class Solution &#123; public int minPatches(int[] nums, int n) &#123; long sum = 0; int ans = 0; //用于记录需要添加数字的个数 int index = 0; // 用于记录数组遍历的位置 if (nums.length &gt; 0 &amp;&amp; nums[0] == 1) &#123; sum = 1; index = 1; &#125; while (sum &lt; n) &#123; // 判断数值中的下一个元素是否大于当前和，即为m+1，不满足则不用在该位置添加新元素 while (index &lt; nums.length &amp;&amp; nums[index] &lt;= sum) &#123; sum += nums[index]; index++; &#125; // 满足m+1的条件，则先判断原数组中是否存在m+1的元素，不存在则添加新元素 if (sum &lt; n) &#123; if (index &lt; nums.length &amp;&amp; nums[index] == sum + 1) index++; else &#123; ans++; &#125; sum ＝ 2 ＊ sum + 1; &#125; &#125; return ans; &#125;&#125; 时间复杂度：O(n)；空间复杂度：O(1)]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Google</tag>
+        <tag>Array</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Google 面试题：分饼干]]></title>
     <url>%2F2017%2F10%2F22%2FGoogle%20%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%9A%E5%88%86%E9%A5%BC%E5%B9%B2%2F</url>
     <content type="text"><![CDATA[Question假设有一群孩子和一些饼干，每一块饼干j的大小为s(j)，同时每一个孩子i被分到的饼干大小至少为g(i)，即s(j)&gt;=g(i)时这个孩子才会满足，g(i)称为孩子i的满足度。我们的目标是将饼干分配给孩子，使得到满足的孩子尽可能多。保证每个g(i)为正，且不能将多块饼干分给一个孩子或将一块饼干分给多个孩子。 example1： 输入: [1,2,3], [1,1] 输出: 1 说明: 三个孩子的满足度分别为1,2,3，两块饼干的大小均为1。饼干的大小为1，只能满足第一个孩子，所以输出1。 example2： 输入: [1,2], [1,2,3] 输出: 2 说明: 两个孩子的满足度分别为1,2，三块饼干的大小分别为1,2,3。这三块饼干的大小足以满足这两个孩子，所以输出2。 AnswerSolution 1：使用贪心的思想。 为了使得满足的孩子尽可能的多，所以我们在分饼干的时候，要使得在满足其满意度的情况下，每个孩子分得的饼干尽可能的小； 从小到大排序孩子们的满意度g(i)，对单个孩子i，从剩余的饼干中寻找最小的能够满足该孩子的饼干； 将数组s(j)和g(i)均从小到大排序，分别用指针i和j来指示孩子和饼干。 12345678910111213class Solution &#123; public int findContentChildren(int[] g, int[] s)&#123; Arrays.sort(g); Arrays.sort(s); int i, j; for (i = j = 0; i &lt; g.length &amp;&amp; j &lt; s.length; j++)&#123; if (g[i] &lt;= s[j])&#123; i++; &#125; &#125; return i; &#125;&#125; 时间复杂度：O(nlgn)，这里排序的时间复杂度是O(nlgn)，遍历的时间复杂度是O(n)，和为O(nlgn) 空间复杂度：O(1)]]></content>
@@ -8,7 +44,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
+        <tag>Google</tag>
         <tag>Array</tag>
       </tags>
   </entry>
@@ -20,8 +56,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>Array</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -32,8 +68,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>Array</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -44,8 +80,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>Array</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -56,8 +92,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>Array</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -68,8 +104,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>Array</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -80,8 +116,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>Array</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -92,8 +128,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>Array</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -116,8 +152,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>Array</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -128,8 +164,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>Array</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -140,8 +176,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>Array</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -152,8 +188,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>Array</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -164,8 +200,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>Array</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -176,8 +212,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>Array</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -188,8 +224,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>Array</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -200,20 +236,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>Array</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[LeetCode-119：Pascal's Triangle II]]></title>
-    <url>%2F2017%2F04%2F11%2FLeetCode-119_Pascal's_Triangle_II%2F</url>
-    <content type="text"><![CDATA[QuestionGiven an index k, return the kth row of the Pascal’s triangle. For example, given k = 3,Return [1,3,3,1]. Note:optimize your algorithm to use only O(k) extra space. Idea给定一个系数k，返回Pascal三角的第k行，将优化算法，使得算法的空间复杂度为O(k). 同LeetCode-118，直接使用Pascal三角的生成方式进行解题. 该题较118更为简单，无需要对Pascal三角的结构进行存储，仅需依次生成行至所需的行数即可； 使用ArrayList存储行. Code ArrayList—Java 123456789101112public class Solution &#123; public List&lt;Integer&gt; getRow(int rowIndex) &#123; ArrayList&lt;Integer&gt; row = new ArrayList&lt;Integer&gt;(); for (int i=0; i&lt;rowIndex+1; i++)&#123; row.add(0,1); for(int j=1; j&lt;row.size()-1;j++)&#123; row.set(j, row.get(j)+row.get(j+1)); &#125; &#125; return row; &#125;&#125; 虽然该题较118更为简单，但是依然需要注意，需要返回的是第k行，这里第0行为[1].]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
         <tag>LeetCode</tag>
-        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -224,8 +248,20 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>Array</tag>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode-119：Pascal's Triangle II]]></title>
+    <url>%2F2017%2F04%2F11%2FLeetCode-119_Pascal's_Triangle_II%2F</url>
+    <content type="text"><![CDATA[QuestionGiven an index k, return the kth row of the Pascal’s triangle. For example, given k = 3,Return [1,3,3,1]. Note:optimize your algorithm to use only O(k) extra space. Idea给定一个系数k，返回Pascal三角的第k行，将优化算法，使得算法的空间复杂度为O(k). 同LeetCode-118，直接使用Pascal三角的生成方式进行解题. 该题较118更为简单，无需要对Pascal三角的结构进行存储，仅需依次生成行至所需的行数即可； 使用ArrayList存储行. Code ArrayList—Java 123456789101112public class Solution &#123; public List&lt;Integer&gt; getRow(int rowIndex) &#123; ArrayList&lt;Integer&gt; row = new ArrayList&lt;Integer&gt;(); for (int i=0; i&lt;rowIndex+1; i++)&#123; row.add(0,1); for(int j=1; j&lt;row.size()-1;j++)&#123; row.set(j, row.get(j)+row.get(j+1)); &#125; &#125; return row; &#125;&#125; 虽然该题较118更为简单，但是依然需要注意，需要返回的是第k行，这里第0行为[1].]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Array</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -236,8 +272,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>LeetCode</tag>
         <tag>Array</tag>
+        <tag>LeetCode</tag>
         <tag>BinarySearch</tag>
       </tags>
   </entry>
