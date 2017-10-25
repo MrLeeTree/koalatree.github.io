@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode-243：Shortest Word Distance (单词最短距离)]]></title>
+    <url>%2F2017%2F10%2F25%2FLeetCode-243%EF%BC%9AShortest%20Word%20Distance%20%EF%BC%88%E5%8D%95%E8%AF%8D%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[QuestionGiven a list of words and two words word1 and word2, return the shortest distance between these two words in the list. example： Assume that words = [&quot;practice&quot;, &quot;makes&quot;, &quot;perfect&quot;, &quot;coding&quot;, &quot;makes&quot;]. Given word1 = “coding”, word2 = “practice”, return 3. Given word1 = &quot;makes&quot;, word2 = &quot;coding&quot;, return 1. Note: You may assume that word1 does not equal to word2, and word1 and word2 are both in the list. 问题解析： 给定单词list，返回其中任意两单词的最短位置距离。 AnswerSolution 1：记录二者最新位置和最小距离，遍历实现。 因为list中可能存在相同的单词，所以不能使用Hash来实现； 通过两个指针指示两个单词的最新位置，遍历实现即可。 1234567891011121314151617class Solution &#123; public int shortestDistance(String[] words, String word1, String word2) &#123; int pos1 = -1; int pos2 = -1; int distance = words.length-1; for(int i=0; i&lt;words.length; i++) &#123; if (word1.equals(words[i])) &#123; pos1 = i; if (pos2 != -1 &amp;&amp; pos1-pos2&lt;distance) distance = pos1-pos2; &#125; else if (word2.equals(words[i])) &#123; pos2 = i; if (pos1 != -1 &amp;&amp; pos2-pos1&lt;distance) distance = pos2-pos1; &#125; &#125; return distance; &#125; &#125; 时间复杂度：O(n)，空间复杂度：O(1)]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Array</tag>
+        <tag>Words</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode-283：Move Zeroes (将数组中0元素移至尾部)]]></title>
+    <url>%2F2017%2F10%2F25%2FLeetCode-283%EF%BC%9AMove%20Zeroes%20(%E5%B0%86%E6%95%B0%E7%BB%84%E4%B8%AD0%E5%85%83%E7%B4%A0%E7%A7%BB%E8%87%B3%E5%B0%BE%E9%83%A8)%2F</url>
+    <content type="text"><![CDATA[QuestionGiven an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements. example： given nums = [0, 1, 0, 3, 12], after calling your function, nums should be [1, 3, 12, 0, 0]. Note: You must do this in-place without making a copy of the array. Minimize the total number of operations. 问题解析： 给定数组，将数组中的0元素移至数组末尾，非零元素顺序不变。注意在O(1)的空间复杂度内完成。 AnswerSolution 1：加入位置指针，遍历赋值实现。 因为在题目中说明，非零元素顺序不变，所以这不构成一个排序问题； 加入一个数组位置指针，判断是否为0元素，不为0则赋值当前遍历的元素，位置指针自增1；否则跳过。 123456789101112131415161718class Solution &#123; public void moveZeroes(int[] nums) &#123; if (nums == null || nums.length == 0) return; int index = 0; for (int num : nums)&#123; if (num != 0)&#123; nums[index++] = num; &#125; &#125; while (index &lt; nums.length)&#123; nums[index++] = 0; &#125; return; &#125;&#125; 时间复杂度：O(n)，空间复杂度：O(1)]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Array</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode-665：Non-decreasing Array (判断是否为非递减数组)]]></title>
+    <url>%2F2017%2F10%2F24%2FLeetCode-665%EF%BC%9ANon-decreasing%20Array%20(%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E9%9D%9E%E9%80%92%E5%87%8F%E6%95%B0%E7%BB%84)%2F</url>
+    <content type="text"><![CDATA[QuestionGiven an array with n integers, your task is to check if it could become non-decreasing by modifying at most 1 element. We define an array is non-decreasing if array[i] &lt;= array[i + 1] holds for every i (1 &lt;= i &lt; n). Example 1: Input: [4,2,3] Output: True Explanation: You could modify the first 4 to 1 to get a non-decreasing array. Example 2: Input: [4,2,1] Output: False Explanation: You can&apos;t get a non-decreasing array by modify at most one element. Note: The n belongs to [1, 10,000]. 问题解析： 给定数组，判断是否能够只修改一个元素，就可以使得数组是非递减数组，即对每个元素均有array[i] &lt;= array[i + 1]。 AnswerSolution 1：贪心思想求解。 首先题目比较明确，但是却容易出错。找到array[i] &gt; array[i+1]的情况时，需要对二者进行修改，要么修改array[i]，要么修改array[i+1]，如：[3,5,2,4]，如不修改，则判断为真，实则为假； 具体是对array[i]做修改还是对array[i+1]做修改，需要判断array[i-1]和array[i+1]两者的大小，具体分两种情况 情况一：[2,5,3,4]，当i=1时，array[i]=5，此时array[i-1]=2 &lt; array[i+1]=3，则需修改“5”为“3”，即令array[i]=array[i+1]，则保证数组返回真； 情况二：[4,5,3,7]，当i=1时，array[i]=5，此时array[i-1]=4 &gt; array[i+1]=3，则需修改“3”为“5”，即令array[i+1]=array[i]，则保证数组返回真； 加入count&lt;=1的判断条件在遍历循环中，只要数组中出现两次修改，则退出，避免后面不必要的计算。 1234567891011121314class Solution &#123; public boolean checkPossibility(int[] nums) &#123; int count = 0; for (int i = 0; i &lt; nums.length-1 &amp;&amp; count &lt;= 1; i++)&#123; if (nums[i] &gt; nums[i+1])&#123; count++; if (i-1 &lt; 0 || nums[i-1] &lt;= nums[i+1]) nums[i] = nums[i+1]; else nums[i+1] = nums[i]; &#125; &#125; return count &lt;= 1; &#125;&#125; 时间复杂度：O(n)，空间复杂度：O(1)]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Array</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode-167：Two Sum II - Input array is sorted (固定和的元素的索引 II)]]></title>
     <url>%2F2017%2F10%2F24%2FLeetCode-167%EF%BC%9ATwo%20Sum%20II%20-%20Input%20array%20is%20sorted%20(%E5%9B%BA%E5%AE%9A%E5%92%8C%E7%9A%84%E5%85%83%E7%B4%A0%E7%9A%84%E7%B4%A2%E5%BC%95%20II)%2F</url>
     <content type="text"><![CDATA[QuestionGiven an array of integers that is already sorted in ascending order, find two numbers such that they add up to a specific target number. The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. Please note that your returned answers (both index1 and index2) are not zero-based. You may assume that each input would have exactly one solution and you may not use the same element twice. Example Input: numbers={2, 7, 11, 15}, target=9 Output: index1=1, index2=2 问题解析： 给定升序排序数组，找到两个和为给定数字的元素，返回二者位置。注意index1 &lt; index2，且不使用重复元素。 AnswerSolution 1：左右两指针相加靠近。 注意题目与LeetCode-1：Two Sum存在不同的地方，本题要求index1 &lt; index2，可以使用除与LeetCode-1相同的HashMap之外其他的方法。 题中要求index1 &lt; index2，那么我们可以利用这样的性质，设置左右两个指针，从两端向中间逼近，每次都用两个数判断是否等于目标值，等于则返回，不等则判断大小，增减左右指针。 123456789101112131415class Solution &#123; public int[] twoSum(int[] numbers, int target) &#123; int left = 0; int right = numbers.length-1; while (numbers[left] + numbers[right] != target)&#123; if (numbers[left] + numbers[right] &gt; target)&#123; right--; &#125;else&#123; left++; &#125; &#125; return new int[]&#123;left+1, right+1&#125;; &#125;&#125; 时间复杂度：O(n)；空间复杂度：O(1)]]></content>
@@ -8,8 +45,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>LeetCode</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -20,8 +57,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>LeetCode</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -32,8 +69,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Google</tag>
         <tag>Array</tag>
+        <tag>Google</tag>
       </tags>
   </entry>
   <entry>
@@ -44,8 +81,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Google</tag>
         <tag>Array</tag>
+        <tag>Google</tag>
       </tags>
   </entry>
   <entry>
@@ -56,8 +93,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>LeetCode</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -68,8 +105,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>LeetCode</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -80,8 +117,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>LeetCode</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -92,8 +129,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>LeetCode</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -104,8 +141,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>LeetCode</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -116,8 +153,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>LeetCode</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -128,8 +165,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>LeetCode</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -152,8 +189,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>LeetCode</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -164,8 +201,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>LeetCode</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -176,8 +213,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>LeetCode</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -188,8 +225,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>LeetCode</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -200,8 +237,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>LeetCode</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -212,8 +249,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>LeetCode</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -224,8 +261,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>LeetCode</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -236,20 +273,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>LeetCode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[LeetCode-118：Pascal's Triangle]]></title>
-    <url>%2F2017%2F04%2F11%2FLeetCode-118_Pascal's_Triangle%2F</url>
-    <content type="text"><![CDATA[QuestionGiven numRows, generate the first numRows of Pascal’s triangle. For example, given numRows = 5,Return[ [1], [1,1], [1,2,1], [1,3,3,1], [1,4,6,4,1]] Idea给定行数，生成制定行数的Pascal’s triangle(又称，杨辉三角)。 直接使用Pascal三角的生成方式进行解题. Java： 使用ArrayList]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
         <tag>Array</tag>
-        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -260,8 +285,20 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>LeetCode</tag>
+        <tag>Array</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode-118：Pascal's Triangle]]></title>
+    <url>%2F2017%2F04%2F11%2FLeetCode-118_Pascal's_Triangle%2F</url>
+    <content type="text"><![CDATA[QuestionGiven numRows, generate the first numRows of Pascal’s triangle. For example, given numRows = 5,Return[ [1], [1,1], [1,2,1], [1,3,3,1], [1,4,6,4,1]] Idea给定行数，生成制定行数的Pascal’s triangle(又称，杨辉三角)。 直接使用Pascal三角的生成方式进行解题. Java： 使用ArrayList]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -272,8 +309,8 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>LeetCode</tag>
+        <tag>Array</tag>
         <tag>BinarySearch</tag>
       </tags>
   </entry>

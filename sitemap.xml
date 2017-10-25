@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://koalatree.github.io/2017/10/25/LeetCode-243%EF%BC%9AShortest%20Word%20Distance%20%EF%BC%88%E5%8D%95%E8%AF%8D%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB%EF%BC%89/</loc>
+    
+    <lastmod>2017-10-25T04:23:55.770Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://koalatree.github.io/2017/10/25/LeetCode-283%EF%BC%9AMove%20Zeroes%20(%E5%B0%86%E6%95%B0%E7%BB%84%E4%B8%AD0%E5%85%83%E7%B4%A0%E7%A7%BB%E8%87%B3%E5%B0%BE%E9%83%A8)/</loc>
+    
+    <lastmod>2017-10-25T04:22:28.626Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://koalatree.github.io/2017/10/24/LeetCode-665%EF%BC%9ANon-decreasing%20Array%20(%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E9%9D%9E%E9%80%92%E5%87%8F%E6%95%B0%E7%BB%84)/</loc>
+    
+    <lastmod>2017-10-25T04:21:24.454Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://koalatree.github.io/2017/10/22/Google%20%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%9A%E5%88%86%E9%A5%BC%E5%B9%B2/</loc>
     
     <lastmod>2017-10-24T15:35:14.712Z</lastmod>
@@ -233,14 +254,14 @@
   </url>
   
   <url>
-    <loc>https://koalatree.github.io/tags/index.html</loc>
+    <loc>https://koalatree.github.io/categories/index.html</loc>
     
     <lastmod>2017-07-30T10:37:55.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://koalatree.github.io/categories/index.html</loc>
+    <loc>https://koalatree.github.io/tags/index.html</loc>
     
     <lastmod>2017-07-30T10:37:55.000Z</lastmod>
     
