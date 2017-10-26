@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT, koalatree, Mr.Tree, Blog, Node.js, Git, Python, JAVA, ML, DL, Tensorflow, Hadoop, Spark" />
+  <meta name="keywords" content="Array,LeetCode,DFS," />
 
 
 
@@ -84,17 +84,18 @@
 
 
 
-<meta name="description" content="LeetCode-695：Max Area of Island （岛的最大面积） layout: posttitle: “LeetCode-695：Max Area of Island (岛的最大面积)”date: 2017-10-26 11:05categories: LeetCodetags:  - LeetCode - Array - DFS reward: truecomments: fa">
+<meta name="description" content="QuestionGiven a non-empty 2D array grid of 0’s and 1’s, an island is a group of 1’s (representing land) connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid ar">
+<meta name="keywords" content="Array,LeetCode,DFS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大树先生的博客">
+<meta property="og:title" content="LeetCode-695：Max Area of Island (岛的最大面积)">
 <meta property="og:url" content="https://koalatree.github.io/2017/10/26/LeetCode-695：Max Area of Island （岛的最大面积）/index.html">
 <meta property="og:site_name" content="大树先生的博客">
-<meta property="og:description" content="LeetCode-695：Max Area of Island （岛的最大面积） layout: posttitle: “LeetCode-695：Max Area of Island (岛的最大面积)”date: 2017-10-26 11:05categories: LeetCodetags:  - LeetCode - Array - DFS reward: truecomments: fa">
+<meta property="og:description" content="QuestionGiven a non-empty 2D array grid of 0’s and 1’s, an island is a group of 1’s (representing land) connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid ar">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-26T04:19:10.083Z">
+<meta property="og:updated_time" content="2017-10-26T04:22:55.175Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="大树先生的博客">
-<meta name="twitter:description" content="LeetCode-695：Max Area of Island （岛的最大面积） layout: posttitle: “LeetCode-695：Max Area of Island (岛的最大面积)”date: 2017-10-26 11:05categories: LeetCodetags:  - LeetCode - Array - DFS reward: truecomments: fa">
+<meta name="twitter:title" content="LeetCode-695：Max Area of Island (岛的最大面积)">
+<meta name="twitter:description" content="QuestionGiven a non-empty 2D array grid of 0’s and 1’s, an island is a group of 1’s (representing land) connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid ar">
 
 
 
@@ -117,7 +118,7 @@
 
   <link rel="canonical" href="https://koalatree.github.io/2017/10/26/LeetCode-695：Max Area of Island （岛的最大面积）/"/>
 
-  <title>  | 大树先生的博客 </title>
+  <title> LeetCode-695：Max Area of Island (岛的最大面积) | 大树先生的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -290,7 +291,7 @@
             
             
               
-                
+                LeetCode-695：Max Area of Island (岛的最大面积)
               
             
           </h1>
@@ -302,15 +303,32 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-10-26T12:14:43+08:00" content="2017-10-26">
+            <time itemprop="dateCreated" datetime="2017-10-26T11:05:00+08:00" content="2017-10-26">
               2017-10-26
             </time>
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
 
+                
+                
+
+              
+            </span>
           
-            
+
           
 
           
@@ -335,13 +353,7 @@
       
 
       
-        <h1 id="LeetCode-695：Max-Area-of-Island-（岛的最大面积）"><a href="#LeetCode-695：Max-Area-of-Island-（岛的最大面积）" class="headerlink" title="LeetCode-695：Max Area of Island （岛的最大面积）"></a>LeetCode-695：Max Area of Island （岛的最大面积）</h1><hr>
-<p>layout: post<br>title: “LeetCode-695：Max Area of Island (岛的最大面积)”<br>date: 2017-10-26 11:05<br>categories: LeetCode<br>tags: </p>
-<pre><code>- LeetCode
-- Array
-- DFS
-</code></pre><p>reward: true<br>comments: false</p>
-<h2 id="summary-img"><a href="#summary-img" class="headerlink" title="summary_img:"></a>summary_img:</h2><h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given a non-empty 2D array grid of 0’s and 1’s, an island is a group of 1’s (representing land) connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.</p>
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Given a non-empty 2D array grid of 0’s and 1’s, an island is a group of 1’s (representing land) connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.</p>
 <p>Find the maximum area of an island in the given 2D array. (If there is no island, the maximum area is 0.)</p>
 <p><strong>Example 1:</strong></p>
 <pre><code>[[0,0,1,0,0,0,0,1,0,0,0,0,0],
@@ -418,13 +430,23 @@ Given the above grid, return 0.
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Array/" rel="tag"><i class="fa fa-tag"></i>Array</a>
+          
+            <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i>LeetCode</a>
+          
+            <a href="/tags/DFS/" rel="tag"><i class="fa fa-tag"></i>DFS</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/26/LeetCode-674：Longest Continuous Increasing Subsequence （最长连续增序列）/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2017/10/26/LeetCode-674：Longest Continuous Increasing Subsequence （最长连续增序列）/" rel="next" title="LeetCode-674：Longest Continuous Increasing Subsequence (最长连续增序列)">
+                <i class="fa fa-chevron-left"></i> LeetCode-674：Longest Continuous Increasing Subsequence (最长连续增序列)
               </a>
             
           </div>
@@ -476,10 +498,6 @@ Given the above grid, return 0.
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -537,7 +555,7 @@ Given the above grid, return 0.
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -623,7 +641,7 @@ Given the above grid, return 0.
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-695：Max-Area-of-Island-（岛的最大面积）"><span class="nav-number">1.</span> <span class="nav-text">LeetCode-695：Max Area of Island （岛的最大面积）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#summary-img"><span class="nav-number">1.1.</span> <span class="nav-text">summary_img:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.2.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Answer"><span class="nav-number">1.3.</span> <span class="nav-text">Answer</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Solution-1："><span class="nav-number">1.3.0.1.</span> <span class="nav-text">Solution 1：</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Answer"><span class="nav-number">2.</span> <span class="nav-text">Answer</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Solution-1："><span class="nav-number">2.0.1.</span> <span class="nav-text">Solution 1：</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
