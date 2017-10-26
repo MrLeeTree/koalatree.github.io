@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>%2F2017%2F10%2F26%2FLeetCode-695%EF%BC%9AMax%20Area%20of%20Island%20%EF%BC%88%E5%B2%9B%E7%9A%84%E6%9C%80%E5%A4%A7%E9%9D%A2%E7%A7%AF%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[LeetCode-695：Max Area of Island （岛的最大面积） layout: posttitle: “LeetCode-695：Max Area of Island (岛的最大面积)”date: 2017-10-26 11:05categories: LeetCodetags: - LeetCode - Array - DFS reward: truecomments: false summary_img:QuestionGiven a non-empty 2D array grid of 0’s and 1’s, an island is a group of 1’s (representing land) connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water. Find the maximum area of an island in the given 2D array. (If there is no island, the maximum area is 0.) Example 1: [[0,0,1,0,0,0,0,1,0,0,0,0,0], [0,0,0,0,0,0,0,1,1,1,0,0,0], [0,1,1,0,1,0,0,0,0,0,0,0,0], [0,1,0,0,1,1,0,0,1,0,1,0,0], [0,1,0,0,1,1,0,0,1,1,1,0,0], [0,0,0,0,0,0,0,0,0,0,1,0,0], [0,0,0,0,0,0,0,1,1,1,0,0,0], [0,0,0,0,0,0,0,1,1,0,0,0,0]] Given the above grid, return 6. Note the answer is not 11, because the island must be connected 4-directionally. Example 2: [[0,0,0,0,0,0,0,0]] Given the above grid, return 0. Note: The length of each dimension in the given grid does not exceed 50. 问题解析： 给定非空矩阵，元素为0或1，1代表陆地，四个方向中若有陆地相连，则代表区域，求最大区域的面积。 AnswerSolution 1：DFS：Depth-first search，深度优先搜索。 用DFS算法实现每个区域的面积，这里利用递归实现，计算过的陆地则变为0； 遍历图中所有的元素，记录当前最大的面积。 12345678910111213141516171819202122class Solution &#123; public int maxAreaOfIsland(int[][] grid) &#123; int maxArea = 0; for (int i = 0; i &lt; grid.length; i++)&#123; for (int j = 0; j &lt; grid[0].length; j++)&#123; if (grid[i][j] != 0)&#123; maxArea = Math.max(maxArea, areaOfIsland(grid, i, j)); &#125; &#125; &#125; return maxArea; &#125; public int areaOfIsland(int[][] grid, int i, int j)&#123; if (i &gt;= 0 &amp;&amp; i &lt; grid.length &amp;&amp; j &gt;= 0 &amp;&amp; j &lt; grid[0].length &amp;&amp; grid[i][j] != 0)&#123; grid[i][j] = 0; return 1 + areaOfIsland(grid,i+1,j) + areaOfIsland(grid,i-1,j) + areaOfIsland(grid,i,j+1) + areaOfIsland(grid,i,j-1); &#125; return 0; &#125;&#125; 时间复杂度：O(mn)，其中，n为矩阵中的元素个数，m为面积最大的岛的元素个数。 空间复杂度：O(1)]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2017%2F10%2F26%2FLeetCode-674%EF%BC%9ALongest%20Continuous%20Increasing%20Subsequence%20%EF%BC%88%E6%9C%80%E9%95%BF%E8%BF%9E%E7%BB%AD%E5%A2%9E%E5%BA%8F%E5%88%97%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[LeetCode-674：Longest Continuous Increasing Subsequence （最长连续增序列） layout: posttitle: “LeetCode-674：Longest Continuous Increasing Subsequence (最长连续增序列)”date: 2017-10-26 10:35categories: LeetCodetags: - LeetCode - Array reward: truecomments: false summary_img:QuestionGiven an unsorted array of integers, find the length of longest continuous increasing subsequence. Example 1: Input: [1,3,5,4,7] Output: 3 Explanation: The longest continuous increasing subsequence is [1,3,5], its length is 3. Even though [1,3,5,7] is also an increasing subsequence, it&apos;s not a continuous one where 5 and 7 are separated by 4. Example 2: Input: [2,2,2,2,2] Output: 1 Explanation: The longest continuous increasing subsequence is [2], its length is 1. Note: Length of the array will not exceed 10,000. 问题解析： 给定数组，找到其中最长的连续递增的子数组序列，连续相等不算递增。 AnswerSolution 1：遍历实现。 题目比较简单，通过记录最小和最大索引位置和当前最大长度，遍历实现即可。 12345678910111213141516171819class Solution &#123; public int findLengthOfLCIS(int[] nums) &#123; if (nums == null || nums.length == 0) return 0; int maxlength = 1; int left = 0; int right = 0; for (int i = 0; i &lt; nums.length-1; i++)&#123; if (nums[i] &lt; nums[i+1])&#123; right++; maxlength = Math.max(maxlength, right-left+1); &#125;else&#123; left = right = i+1; &#125; &#125; return maxlength; &#125;&#125; 时间复杂度：O(n)，空间复杂度：O(1)]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode-448：Find All Numbers Disappeared in an Array (寻找缺失多个数字)]]></title>
+    <url>%2F2017%2F10%2F26%2FLeetCode-448%EF%BC%9AFind%20All%20Numbers%20Disappeared%20in%20an%20Array%20%EF%BC%88%E5%AF%BB%E6%89%BE%E7%BC%BA%E5%A4%B1%E5%A4%9A%E4%B8%AA%E6%95%B0%E5%AD%97%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[QuestionGiven an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once. Find all the elements of [1, n] inclusive that do not appear in this array. Could you do it without extra space and in O(n) runtime? You may assume the returned list does not count as extra space. Example: Input: [4,3,2,7,8,2,3,1] Output: [5,6] 问题解析： 给定含有n个元素的数组，每个元素大小满足 1 ≤ a[i] ≤ n，找出其中缺少的元素。 AnswerSolution 1：技巧性实现。 因为题目中说明了，要求在O(n)的时间复杂度和O(1)的空间复杂度上实现，且其中缺失的可能不止一个数字，所以与LeetCode-268：Missing Number(寻找缺失数字)解法有所不同。 这里利用一个技巧去实现。由题目可以知道，数组中的数字均满足1 ≤ a[i] ≤ n，也就是说其中的元素和数组的位置索引存在某种关联性。如果数组中不缺少数字，那么每一个元素就会与数组的位置索引所一一对应，那么我们就可以利用这种关系。 遍历数组，若元素存在num[i]，则将其看作位置索引，那么就把num[i]-1位置上的元素变为负数。最终没有变为负数的元素所在的位置索引值，就是我们没有见过的数字。 1234567891011121314151617181920class Solution &#123; public List&lt;Integer&gt; findDisappearedNumbers(int[] nums) &#123; ArrayList&lt;Integer&gt; ret = new ArrayList&lt;Integer&gt;(); for (int i = 0; i &lt; nums.length; i++)&#123; int value = Math.abs(nums[i])-1; if (nums[value] &gt; 0)&#123; nums[value] = -nums[value]; &#125; &#125; for (int i = 0; i &lt; nums.length; i++)&#123; if (nums[i] &gt; 0)&#123; ret.add(i+1); &#125; &#125; return ret; &#125;&#125; 时间复杂度：O(n)，空间复杂度：O(1)]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Array</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode-243：Shortest Word Distance (单词最短距离)]]></title>
     <url>%2F2017%2F10%2F25%2FLeetCode-243%EF%BC%9AShortest%20Word%20Distance%20%EF%BC%88%E5%8D%95%E8%AF%8D%E6%9C%80%E7%9F%AD%E8%B7%9D%E7%A6%BB%EF%BC%89%2F</url>
     <content type="text"><![CDATA[QuestionGiven a list of words and two words word1 and word2, return the shortest distance between these two words in the list. example： Assume that words = [&quot;practice&quot;, &quot;makes&quot;, &quot;perfect&quot;, &quot;coding&quot;, &quot;makes&quot;]. Given word1 = “coding”, word2 = “practice”, return 3. Given word1 = &quot;makes&quot;, word2 = &quot;coding&quot;, return 1. Note: You may assume that word1 does not equal to word2, and word1 and word2 are both in the list. 问题解析： 给定单词list，返回其中任意两单词的最短位置距离。 AnswerSolution 1：记录二者最新位置和最小距离，遍历实现。 因为list中可能存在相同的单词，所以不能使用Hash来实现； 通过两个指针指示两个单词的最新位置，遍历实现即可。 1234567891011121314151617class Solution &#123; public int shortestDistance(String[] words, String word1, String word2) &#123; int pos1 = -1; int pos2 = -1; int distance = words.length-1; for(int i=0; i&lt;words.length; i++) &#123; if (word1.equals(words[i])) &#123; pos1 = i; if (pos2 != -1 &amp;&amp; pos1-pos2&lt;distance) distance = pos1-pos2; &#125; else if (word2.equals(words[i])) &#123; pos2 = i; if (pos1 != -1 &amp;&amp; pos2-pos1&lt;distance) distance = pos2-pos1; &#125; &#125; return distance; &#125; &#125; 时间复杂度：O(n)，空间复杂度：O(1)]]></content>
@@ -278,9 +300,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[LeetCode-119：Pascal's Triangle II]]></title>
-    <url>%2F2017%2F04%2F11%2FLeetCode-119_Pascal's_Triangle_II%2F</url>
-    <content type="text"><![CDATA[QuestionGiven an index k, return the kth row of the Pascal’s triangle. For example, given k = 3,Return [1,3,3,1]. Note:optimize your algorithm to use only O(k) extra space. Idea给定一个系数k，返回Pascal三角的第k行，将优化算法，使得算法的空间复杂度为O(k). 同LeetCode-118，直接使用Pascal三角的生成方式进行解题. 该题较118更为简单，无需要对Pascal三角的结构进行存储，仅需依次生成行至所需的行数即可； 使用ArrayList存储行. Code ArrayList—Java 123456789101112public class Solution &#123; public List&lt;Integer&gt; getRow(int rowIndex) &#123; ArrayList&lt;Integer&gt; row = new ArrayList&lt;Integer&gt;(); for (int i=0; i&lt;rowIndex+1; i++)&#123; row.add(0,1); for(int j=1; j&lt;row.size()-1;j++)&#123; row.set(j, row.get(j)+row.get(j+1)); &#125; &#125; return row; &#125;&#125; 虽然该题较118更为简单，但是依然需要注意，需要返回的是第k行，这里第0行为[1].]]></content>
+    <title><![CDATA[LeetCode-118：Pascal's Triangle]]></title>
+    <url>%2F2017%2F04%2F11%2FLeetCode-118_Pascal's_Triangle%2F</url>
+    <content type="text"><![CDATA[QuestionGiven numRows, generate the first numRows of Pascal’s triangle. For example, given numRows = 5,Return[ [1], [1,1], [1,2,1], [1,3,3,1], [1,4,6,4,1]] Idea给定行数，生成制定行数的Pascal’s triangle(又称，杨辉三角)。 直接使用Pascal三角的生成方式进行解题. Java： 使用ArrayList]]></content>
       <categories>
         <category>LeetCode</category>
       </categories>
@@ -290,9 +312,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[LeetCode-118：Pascal's Triangle]]></title>
-    <url>%2F2017%2F04%2F11%2FLeetCode-118_Pascal's_Triangle%2F</url>
-    <content type="text"><![CDATA[QuestionGiven numRows, generate the first numRows of Pascal’s triangle. For example, given numRows = 5,Return[ [1], [1,1], [1,2,1], [1,3,3,1], [1,4,6,4,1]] Idea给定行数，生成制定行数的Pascal’s triangle(又称，杨辉三角)。 直接使用Pascal三角的生成方式进行解题. Java： 使用ArrayList]]></content>
+    <title><![CDATA[LeetCode-119：Pascal's Triangle II]]></title>
+    <url>%2F2017%2F04%2F11%2FLeetCode-119_Pascal's_Triangle_II%2F</url>
+    <content type="text"><![CDATA[QuestionGiven an index k, return the kth row of the Pascal’s triangle. For example, given k = 3,Return [1,3,3,1]. Note:optimize your algorithm to use only O(k) extra space. Idea给定一个系数k，返回Pascal三角的第k行，将优化算法，使得算法的空间复杂度为O(k). 同LeetCode-118，直接使用Pascal三角的生成方式进行解题. 该题较118更为简单，无需要对Pascal三角的结构进行存储，仅需依次生成行至所需的行数即可； 使用ArrayList存储行. Code ArrayList—Java 123456789101112public class Solution &#123; public List&lt;Integer&gt; getRow(int rowIndex) &#123; ArrayList&lt;Integer&gt; row = new ArrayList&lt;Integer&gt;(); for (int i=0; i&lt;rowIndex+1; i++)&#123; row.add(0,1); for(int j=1; j&lt;row.size()-1;j++)&#123; row.set(j, row.get(j)+row.get(j+1)); &#125; &#125; return row; &#125;&#125; 虽然该题较118更为简单，但是依然需要注意，需要返回的是第k行，这里第0行为[1].]]></content>
       <categories>
         <category>LeetCode</category>
       </categories>
