@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="TensorFlow," />
+  <meta name="keywords" content="LeetCode,Array," />
 
 
 
@@ -84,22 +84,18 @@
 
 
 
-<meta name="description" content="11月29日，Google Brain工程师团队宣布在 TensorFlow 0.12 中加入初步的Windows支持。 在谷歌的支持下，TensorFlow 已成为 GitHub 上最受欢迎的机器学习开源项目。同时，谷歌也在 TensorFlow 框架中进行过各类研究、开源了其中一些项目，这些研究涉及到自然语言处理、机器翻译、图像描述、图像分类等等。">
-<meta name="keywords" content="TensorFlow">
+<meta name="description" content="QuestionFind the contiguous subarray within an array (containing at least one number) which has the largest sum. example： given the array [-2,1,-3,4,-1,2,1,-5,4], the contiguous subarray [4,-1,2,1] ha">
+<meta name="keywords" content="LeetCode,Array">
 <meta property="og:type" content="article">
-<meta property="og:title" content="windows10系统安装TensorFlow">
-<meta property="og:url" content="https://koalatree.github.io/2017/02/21/TensorFlow_for_win10_system/index.html">
+<meta property="og:title" content="LeetCode-53：Maximum Subarray (和最大的连续子数组)">
+<meta property="og:url" content="https://koalatree.github.io/2017/10/27/LeetCode-53：Maximum Subarray （和最大的连续子数组）/index.html">
 <meta property="og:site_name" content="大树先生的博客">
-<meta property="og:description" content="11月29日，Google Brain工程师团队宣布在 TensorFlow 0.12 中加入初步的Windows支持。 在谷歌的支持下，TensorFlow 已成为 GitHub 上最受欢迎的机器学习开源项目。同时，谷歌也在 TensorFlow 框架中进行过各类研究、开源了其中一些项目，这些研究涉及到自然语言处理、机器翻译、图像描述、图像分类等等。">
+<meta property="og:description" content="QuestionFind the contiguous subarray within an array (containing at least one number) which has the largest sum. example： given the array [-2,1,-3,4,-1,2,1,-5,4], the contiguous subarray [4,-1,2,1] ha">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://koalatree.github.io/2017/02/21/TensorFlow_for_win10_system/TensorFlow_for_win10_system-1.jpg">
-<meta property="og:image" content="https://koalatree.github.io/2017/02/21/TensorFlow_for_win10_system/TensorFlow_for_win10_system-2.jpg">
-<meta property="og:image" content="https://koalatree.github.io/2017/02/21/TensorFlow_for_win10_system/TensorFlow_for_win10_system-3.jpg">
-<meta property="og:updated_time" content="2017-08-25T16:45:22.251Z">
+<meta property="og:updated_time" content="2017-10-27T10:47:36.880Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="windows10系统安装TensorFlow">
-<meta name="twitter:description" content="11月29日，Google Brain工程师团队宣布在 TensorFlow 0.12 中加入初步的Windows支持。 在谷歌的支持下，TensorFlow 已成为 GitHub 上最受欢迎的机器学习开源项目。同时，谷歌也在 TensorFlow 框架中进行过各类研究、开源了其中一些项目，这些研究涉及到自然语言处理、机器翻译、图像描述、图像分类等等。">
-<meta name="twitter:image" content="https://koalatree.github.io/2017/02/21/TensorFlow_for_win10_system/TensorFlow_for_win10_system-1.jpg">
+<meta name="twitter:title" content="LeetCode-53：Maximum Subarray (和最大的连续子数组)">
+<meta name="twitter:description" content="QuestionFind the contiguous subarray within an array (containing at least one number) which has the largest sum. example： given the array [-2,1,-3,4,-1,2,1,-5,4], the contiguous subarray [4,-1,2,1] ha">
 
 
 
@@ -120,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="https://koalatree.github.io/2017/02/21/TensorFlow_for_win10_system/"/>
+  <link rel="canonical" href="https://koalatree.github.io/2017/10/27/LeetCode-53：Maximum Subarray （和最大的连续子数组）/"/>
 
-  <title> windows10系统安装TensorFlow | 大树先生的博客 </title>
+  <title> LeetCode-53：Maximum Subarray (和最大的连续子数组) | 大树先生的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -295,7 +291,7 @@
             
             
               
-                windows10系统安装TensorFlow
+                LeetCode-53：Maximum Subarray (和最大的连续子数组)
               
             
           </h1>
@@ -307,8 +303,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-21T14:57:00+08:00" content="2017-02-21">
-              2017-02-21
+            <time itemprop="dateCreated" datetime="2017-10-27T09:50:00+08:00" content="2017-10-27">
+              2017-10-27
             </time>
           </span>
 
@@ -321,8 +317,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/TensorFlow/" itemprop="url" rel="index">
-                    <span itemprop="name">TensorFlow</span>
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
                   </a>
                 </span>
 
@@ -357,32 +353,36 @@
       
 
       
-        <p><img src="/2017/02/21/TensorFlow_for_win10_system/TensorFlow_for_win10_system-1.jpg" alt="人工智能"></p>
-<p>11月29日，Google Brain工程师团队宣布在 TensorFlow 0.12 中加入初步的Windows支持。</p>
-<p>在谷歌的支持下，TensorFlow 已成为 GitHub 上最受欢迎的机器学习开源项目。同时，谷歌也在 TensorFlow 框架中进行过各类研究、开源了其中一些项目，这些研究涉及到自然语言处理、机器翻译、图像描述、图像分类等等。<br><a id="more"></a><br>随着 TensorFlow r0.12 版的发布，这一开源软件库现已支持 Windows7、10 和 Server 2016。同时，这一新版本可以让用户在 TensorFlow 训练中得到 CUDA 8 的 GPU 加速。我们已将新版本在 PyPI 中封装成型。现在你可以使用命令‘pip install tensorflow’来安装 TensorFlow 了。</p>
-<h2 id="一、安装python和python-pip"><a href="#一、安装python和python-pip" class="headerlink" title="一、安装python和python-pip"></a>一、安装python和python-pip</h2><h3 id="1-下载安装python"><a href="#1-下载安装python" class="headerlink" title="1. 下载安装python"></a><strong>1. 下载安装python</strong></h3><ol>
-<li><p>下载<a href="https://www.python.org/ftp/python/3.5.2/python-3.5.2-amd64.exe" target="_blank" rel="external">python3.5.2 for windows10 AMD</a>.<br>##因为电脑是AMD显卡，所以3.5.2版本是我安装的版本，这个连接可以直接用下载工具下载。<br>需要其他版本请到<a href="https://www.python.org/downloads/windows/" target="_blank" rel="external">官网</a>直接下载。</p>
+        <h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Find the contiguous subarray within an array (containing at least one number) which has the largest sum.</p>
+<p><strong>example：</strong></p>
+<pre><code>given the array [-2,1,-3,4,-1,2,1,-5,4],
+the contiguous subarray [4,-1,2,1] has the largest sum = 6.
+</code></pre><a id="more"></a>
+<p><strong>问题解析：</strong></p>
+<p>在给定数组中找到和最大的连续子数组，子数组至少包含一个元素。</p>
+<h2 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h2><h4 id="Solution-1："><a href="#Solution-1：" class="headerlink" title="Solution 1："></a><strong>Solution 1：</strong></h4><p>DP解决。</p>
+<ul>
+<li>首先以本题的例子解释一下：已知数组的前k个元素的和最大子的序列的和为<code>maxSub</code>（每次均比较记录），以及前k个数组的临时和<code>sum</code>。如果添加了第k+1个元素，由于题目中说明是连续子序列这个限制，所以如果k+1这个元素之前的和，也就是<code>sum</code>是小于0的，那么前面的和对于增加的<code>k+1</code>这个元素从而去组成最大子序列是没有贡献的，所以可以直接将<code>sum</code>置0。</li>
+<li>如题目中的数组：[-2,1,-3,4,-1,2,1,-5,4]，就以前两个元素[-2,1]为例，sum = -2 &lt; 0 ，对于数字<code>1</code>来说，加前面的数组<code>-2</code>只会减小它，所以直接置<code>sum=0</code>，新的<code>sum=0+1=1</code>；对[-2,1,-3,4]来说，子数组[-2,1,-3]经过计算后的临时sum = -2 &lt; 0，对于数字<code>4</code>来说，前面的和只会减小它，所以直接置<code>sum=0</code>，新的<code>sum=0+4=4</code>；</li>
+<li>注意，只要sum不减到负数，中间出现小于0的元素是没关系的，sum仍然可以继续累加。</li>
+<li>算法：利用动态规划思想，已知0,..,k的最大和以后，0,…k+1的最大和为：<br>1）若sum[k]&gt;=0,sum[k+1]=sum[k]+A[k+1]；<br>2）若sum[k]&lt;0,sum[k+1]=A[k+1]。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> maxSoFar = nums[<span class="number">0</span>], maxEndingHere = nums[<span class="number">0</span>];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; ++i)&#123;</div><div class="line">            maxEndingHere = Math.max(maxEndingHere+nums[i], nums[i]);</div><div class="line">            maxSoFar = Math.max(maxSoFar, maxEndingHere);	</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> maxSoFar;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>时间复杂度：O(n)，空间复杂度：O(1)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="keyword">int</span>[] A)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> n = A.length;</div><div class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[n];<span class="comment">//dp[i] means the maximum subarray ending with A[i];</span></div><div class="line">        dp[<span class="number">0</span>] = A[<span class="number">0</span>];</div><div class="line">        <span class="keyword">int</span> max = dp[<span class="number">0</span>];</div><div class="line">        </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)&#123;</div><div class="line">            dp[i] = A[i] + (dp[i - <span class="number">1</span>] &gt; <span class="number">0</span> ? dp[i - <span class="number">1</span>] : <span class="number">0</span>);</div><div class="line">            max = Math.max(max, dp[i]);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> max;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
-<li><p>安装python并配置python的环境变量.</p>
+<li><p>时间复杂度：O(n)，空间复杂度：O(n)</p>
 </li>
-</ol>
-<h3 id="2-下载安装python-pip"><a href="#2-下载安装python-pip" class="headerlink" title="2. 下载安装python-pip"></a><strong>2. 下载安装python-pip</strong></h3><ol>
-<li>下载<a href="https://pypi.python.org/packages/11/b6/abcb525026a4be042b486df43905d6893fb04f05aac21c32c638e939e447/pip-9.0.1.tar.gz#md5=35f01da33009719497f01a4ba69d63c9" target="_blank" rel="external">python-pip</a>.</li>
-<li>解压python-pip的安装包，进入到文件的目录中.</li>
-<li>在这个文件夹按住Shift键单击鼠标右键-&gt;点击在此处打开命令窗口.</li>
-<li>安装pip.在命令行执行如下命令。</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ python setup.py install</div></pre></td></tr></table></figure>
-<ol>
-<li>配置python-pip的环境变量,(一般python安装完毕后便会配置成功)。Pip的安装路径在Python的安装路径下的Scripts里面，所以把Pip的路径添加到Path变量里面就可以了。</li>
-</ol>
-<h2 id="二、安装TensorFlow"><a href="#二、安装TensorFlow" class="headerlink" title="二、安装TensorFlow"></a>二、安装TensorFlow</h2><p>如果上面python和python-pip安装没有问题，只需要执行一个指令就可以顺利安装TensorFlow。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">C:&gt; pip install tensorflow</div></pre></td></tr></table></figure>
-<p>Tensorflow所需要的依赖会自动安装：<br><img src="/2017/02/21/TensorFlow_for_win10_system/TensorFlow_for_win10_system-2.jpg" alt="依赖"></p>
-<h2 id="三、你的第一个测试TensorFlow程序"><a href="#三、你的第一个测试TensorFlow程序" class="headerlink" title="三、你的第一个测试TensorFlow程序"></a>三、你的第一个测试TensorFlow程序</h2><h3 id="1-测试代码"><a href="#1-测试代码" class="headerlink" title="1. 测试代码"></a><strong>1. 测试代码</strong></h3><p><code>输出hello</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ python</div><div class="line">import tensorflow as tf</div><div class="line">hello = tf.constant(<span class="string">'Hello, TensorFlow!'</span>);</div><div class="line">sess = tf.Session();</div><div class="line">sess.run(hello);</div><div class="line">Hello, TensorFlow!</div></pre></td></tr></table></figure></p>
-<p><code>10+32=？</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = tf.constant(10)</div><div class="line">b = tf.constant(32)</div><div class="line">sess.run(a+b)</div></pre></td></tr></table></figure></p>
-<h3 id="2-输出成功结果"><a href="#2-输出成功结果" class="headerlink" title="2. 输出成功结果"></a><strong>2. 输出成功结果</strong></h3><p><img src="/2017/02/21/TensorFlow_for_win10_system/TensorFlow_for_win10_system-3.jpg" alt="结果"></p>
-<p>至此TensorFlow已经安装完毕，请尽情使用它吧！</p>
+</ul>
+<h4 id="Solution-2："><a href="#Solution-2：" class="headerlink" title="Solution 2："></a><strong>Solution 2：</strong></h4><p>贪心算法。</p>
+<ul>
+<li>下面的思想其实和DP是相似的。其从头开始一直保持将数组加入进来，直到<code>sum &lt; 0</code>，则将<code>sum</code>置为0，<code>ans</code>一直保存最大的和。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">Idea is very simple. Basically, keep adding each integer to the sequence until the sum drops below 0. If sum is negative, then should reset the sequence.</span></div><div class="line"><span class="comment">*/</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="keyword">int</span> A[], <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> ans=A[<span class="number">0</span>],i,j,sum=<span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)&#123;</div><div class="line">            sum+=A[i];</div><div class="line">            ans=max(sum,ans);</div><div class="line">            sum=max(sum,<span class="number">0</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> ans;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>时间复杂度：O(n)，空间复杂度：O(1)</li>
+</ul>
 
       
     </div>
@@ -433,7 +433,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/TensorFlow/" rel="tag"><i class="fa fa-tag"></i>TensorFlow</a>
+            <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i>LeetCode</a>
+          
+            <a href="/tags/Array/" rel="tag"><i class="fa fa-tag"></i>Array</a>
           
         </div>
       
@@ -442,16 +444,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/20/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/10/26/LeetCode-695：Max Area of Island （岛的最大面积）/" rel="next" title="LeetCode-695：Max Area of Island (岛的最大面积)">
+                <i class="fa fa-chevron-left"></i> LeetCode-695：Max Area of Island (岛的最大面积)
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/02/23/Abstract_git_notes-1/" rel="prev" title="简洁git笔记(一)">
-                简洁git笔记(一) <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/27/LeetCode-605：Can Place Flowers （可放置花的数量）/" rel="prev" title="LeetCode-605：Can Place Flowers (可放置花的数量)">
+                LeetCode-605：Can Place Flowers (可放置花的数量) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -642,7 +644,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、安装python和python-pip"><span class="nav-number">1.</span> <span class="nav-text">一、安装python和python-pip</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-下载安装python"><span class="nav-number">1.1.</span> <span class="nav-text">1. 下载安装python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-下载安装python-pip"><span class="nav-number">1.2.</span> <span class="nav-text">2. 下载安装python-pip</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、安装TensorFlow"><span class="nav-number">2.</span> <span class="nav-text">二、安装TensorFlow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、你的第一个测试TensorFlow程序"><span class="nav-number">3.</span> <span class="nav-text">三、你的第一个测试TensorFlow程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-测试代码"><span class="nav-number">3.1.</span> <span class="nav-text">1. 测试代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-输出成功结果"><span class="nav-number">3.2.</span> <span class="nav-text">2. 输出成功结果</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Answer"><span class="nav-number">2.</span> <span class="nav-text">Answer</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Solution-1："><span class="nav-number">2.0.1.</span> <span class="nav-text">Solution 1：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Solution-2："><span class="nav-number">2.0.2.</span> <span class="nav-text">Solution 2：</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
